@@ -884,18 +884,18 @@
         <div class="row no-gutters block-9">
           <div class="col-md-6 order-md-last d-flex">
 			  <!--<form action="contact.php" method="post" class="bg-light p-4 p-md-5 contact-form" novalidate="novalidate">-->
-			  <form id="form" target="_self" onsubmit="return postToGoogle();" action="" autocomplete="off" class="bg-light p-4 p-md-5 contact-form" novalidate="novalidate"> 	  
+			  <form id="form" target="_self" onsubmit="return postToGoogle();" action="" autocomplete="off" class="bg-light p-4 p-md-5 contact-form" novalidate="novalidate">
               <div class="form-group">
 				<!--<input type="text" class="form-control" name="name" id="name" placeholder="Your Name">-->
 				<input class="form-control" id="nameField" name="entry.2005620554" placeholder="Your Name" required>
               </div>
               <div class="form-group">
 				<!--<input type="text" class="form-control" name="email" id="email" placeholder="Your Email">-->
-				<input class="form-control" id="emailField" name="entry.1045781291" placeholder="Your Name" required>
+				<input class="form-control" id="emailField" name="entry.1045781291" placeholder="Your Email" required>
               </div>
               <div class="form-group">
 				<!--<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">-->
-				<input class="form-control" id="subjectField" name="entry.1166974658" placeholder="Your Name" required>
+				<input class="form-control" id="subjectField" name="entry.1166974658" placeholder="Subject" required>
               </div>
               <div class="form-group">
 			   <!--<textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>-->
@@ -907,54 +907,56 @@
                 <button id="send" type="submit" class="btn btn-primary py-3 px-5">Send Message</button>
               </div>
             </form>
+
+            <h3 id="success-msg" style="text-align: center !important; margin-top:190px !important; display:none; color:#fff"> Your Request has been posted to Google Spreadsheet</h3>
+
+      		  <script>
+      			function postToGoogle() {
+      							var field1 = $("#nameField").val();
+      							var field2 = $("#emailField").val();
+      							var field3 = $("#subjectField").val();
+
+      							if(field1 == ""){
+      								alert('Please Fill Your Name');
+      								document.getElementById("nameField").focus();
+      								return false;
+      							}
+      							if(field2 == ""){
+      								alert('Please Fill Your Email');
+      								document.getElementById("emailField").focus();
+      								return false;
+      							}
+      							if(field2 == ""){
+      								alert('Please Fill Subject');
+      								document.getElementById("subjectField").focus();
+      								return false;
+      							}
+
+
+
+
+      							$.ajax({
+      								url: "https://docs.google.com/forms/d/1k_1R-zSLtGVNOm4vi8BROY7QK1Hx0-y_tMimv4Iu9eA/formResponse?",
+      								data: {"entry.2005620554": field1, "entry.1045781291": field2, "entry.1166974658": field3, "entry.1065046570": field4},
+      								type: "POST",
+      								dataType: "xml",
+      								success: function(d)
+      								{
+      								},
+      								error: function(x, y, z)
+      									{
+
+      										$('#success-msg').show();
+      										$('#form').hide();
+
+      									}
+      							});
+      							return false;
+      						}
+      			</script>    
 		  </div>
 
-		  <h3 id="success-msg" style="text-align: center !important; margin-top:190px !important; display:none; color:#fff"> Your Request has been posted to Google Spreadsheet</h3>
-		  
-		  <script>
-			function postToGoogle() {
-							var field1 = $("#nameField").val();
-							var field2 = $("#emailField").val();
-							var field3 = $("#subjectField").val();
-							 
-							if(field1 == ""){
-								alert('Please Fill Your Name');
-								document.getElementById("nameField").focus();
-								return false;
-							}
-							if(field2 == ""){
-								alert('Please Fill Your Email');
-								document.getElementById("emailField").focus();
-								return false;
-							}
-							if(field2 == ""){
-								alert('Please Fill Subject');
-								document.getElementById("subjectField").focus();
-								return false;
-							}
-			
-			
-							
-				
-							$.ajax({
-								url: "https://docs.google.com/forms/d/1k_1R-zSLtGVNOm4vi8BROY7QK1Hx0-y_tMimv4Iu9eA/formResponse?",
-								data: {"entry.2005620554": field1, "entry.1045781291": field2, "entry.1166974658": field3, "entry.1065046570": field4},
-								type: "POST",
-								dataType: "xml",
-								success: function(d)
-								{
-								},
-								error: function(x, y, z)
-									{
-			
-										$('#success-msg').show();
-										$('#form').hide();
-										
-									}
-							});
-							return false;
-						}
-			</script>
+
 
           <div class="col-md-6 d-flex">
           	<div class="img" style="background-image: url(images/contact.jpg);"><a href="https://www.freepik.com/free-photos-vectors/business" alias="Business vector created by freepik - www.freepik.com"></a></div>
