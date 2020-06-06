@@ -11,8 +11,7 @@
 		$headers="From: ".$email;
 
 		if(mail($to, $subject, $message, $headers)){
-      alert(Thank you"." ".$name.", I will contact you shortly!)
-      //echo "<h1>Sent Successfully! Thank you"." ".$name.", I will contact you shortly!</h1>";
+                header("Location: https://dbcelm.com");
 		}
 		else{
 			echo "Oops..!! Something went wrong!";
