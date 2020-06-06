@@ -33,7 +33,8 @@ function postToGoogle() {
           error: function(x, y, z)
             {
 
-              $('#success-msg').show();
+              alert('Thank you for your interest, I will be in touch soon');
+              //$('#success-msg').show();
               //$('#form').hide();
 
             }
