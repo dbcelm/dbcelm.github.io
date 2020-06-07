@@ -14,11 +14,22 @@
 
 		if(mail($to, $subject, $message, $headers)){
 		
-		header("Location: https://dbcelm.com/thanks.html");
+		?>
+    		<script language="javascript" type="text/javascript">
+        	alert('Thank you for your interest, I have received your message and will contact back soon.');
+        	window.location = 'index.html';
+    		</script>
+		<?php
 		
 		}
 		else{
-			echo "Oops..!! Something went wrong!";
+			
+		?>
+    		<script language="javascript" type="text/javascript">
+        	alert('Oops, looks like there is some issue and you message is not delivered. Please send mail to dbcelm@gmail.com');
+        	window.location = 'index.html';
+    		</script>
+		<?php
 		}
 	}
 ?>
