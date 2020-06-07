@@ -14,7 +14,7 @@
 
 		if(mail($to, $subject, $message, $headers)){
 		
-		header("Location: https://dbcelm.com");
+		header("Location: https://dbcelm.com/thanks.html");
 		
 		}
 		else{
