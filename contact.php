@@ -2,16 +2,18 @@
 	if(isset($_POST['submit'])){
 		$name=$_POST['name'];
 		$email=$_POST['email'];
-		$phone=$_POST['subject'];
+		$subject=$_POST['subject'];
 		$msg=$_POST['msg'];
 
 		$to='dbcelm@gmail.com'; // Receiver Email ID, Replace with your email ID
-		$subject='Freelancing Query';
-		$message="Name :".$name."\n"."Phone :".$phone."\n"."Wrote the following :"."\n\n".$msg;
-		$headers="From: ".$email;
+		$message="Name :".$name."\n"."Email :".$email."\n"."Wrote the following :"."\n\n".$msg;
+		$headers="Subject: ".$subject;
+		$headers="From: dbcelm@gmail.com";
 
 		if(mail($to, $subject, $message, $headers)){
-                header("Location: https://dbcelm.com");
+		
+		header("Location: https://dbcelm.com");
+		
 		}
 		else{
 			echo "Oops..!! Something went wrong!";
