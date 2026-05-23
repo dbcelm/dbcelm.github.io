@@ -1,0 +1,847 @@
+{
+  "meta": {
+    "title": "Ayush Tiwari | DevOps Engineer",
+    "description": "DevOps & Platform Engineering lead with 10+ years building resilient cloud infrastructure at enterprise scale.",
+    "url": "https://dbcelm.github.io"
+  },
+  "profile": {
+    "name": "Ayush Tiwari",
+    "role": "DevOps & Platform Engineer",
+    "tagline": "Building resilient, scalable infrastructure for enterprise SaaS platforms",
+    "skillsPreview": "kubernetes · eks · openshift · crossplane · aws · terraform · argocd · python",
+    "image": "/profile.png",
+    "imageAlt": "Ayush Tiwari, DevOps Engineer"
+  },
+  "statsIntro": {
+    "label": "Track record",
+    "headline": "A snapshot of infrastructure scale and measurable outcomes across enterprise platforms."
+  },
+  "stats": [
+    {
+      "value": 10,
+      "suffix": "+",
+      "label": "Years in DevOps & Platform Engineering"
+    },
+    {
+      "value": 1500,
+      "suffix": "+",
+      "label": "Production Compute Nodes Managed"
+    },
+    {
+      "value": 700,
+      "suffix": "+",
+      "label": "EKS & ECS Clusters Operated"
+    },
+    {
+      "value": 250,
+      "prefix": "$",
+      "suffix": "K+",
+      "label": "Lifetime Cloud Costs Optimized"
+    }
+  ],
+  "about": {
+    "title": "About Me",
+    "lead": "I've spent the last ten years in the space between application code and production, the messy, interesting place where deployments either feel invisible or keep you up at night.",
+    "story": [
+      "I got into DevOps and platform engineering because I liked making that gap smaller. Fewer manual steps. Fewer surprises on release day. More time for teams to focus on what they're actually building. That instinct, to make things reliable and repeatable, still drives most of what I do.",
+      "A lot of my work has started with pipelines. Not because CI/CD is glamorous, but because it's where trust gets built. I've designed application and infrastructure pipelines across Jenkins, GitHub Actions, ArgoCD, and Terraform, from designing environments for Python and Node services to full AWS environments provisioned as code. When a team believes in their path to production, they ship with confidence. That's the bar I hold myself to.",
+      "At enterprise scale, Kubernetes stops being a single cluster and becomes a shared foundation: many teams, many tenants, one platform. I've designed and operated multi-tenant EKS environments with proper isolation, RBAC, and guardrails across hundreds of clusters. The hard part isn't the manifests. It's making the platform feel safe and predictable for everyone on it, including whoever is on-call at 2 a.m.",
+      "That experience led me to internal developer platforms. I led the architecture of an IDP that moved teams off brittle VM workflows onto Kubernetes, with self-service for developers and consistent standards for the organization. Reusable Terraform modules, GitOps with ArgoCD, sensible paths for Python and Node applications. The goal was straightforward: make the right thing the easy thing.",
+      "Cloud cost is where good engineering meets real business impact. I've optimized over $250K in lifetime cloud spend through right-sizing, event-driven automation, and treating cost as a metric you watch, not a surprise you explain. Reliability and efficiency usually turn out to be the same conversation.",
+      "None of it holds together without observability and governance. I've built monitoring stacks with Prometheus, Grafana, Loki, and Datadog, and embedded security and compliance checks into CI/CD so problems surface early, not in production. A platform that runs fast but fails quietly isn't a platform I'd want to operate."
+    ],
+    "closing": "If you're reading this, you're probably deciding whether we'd work well together. I care about that. I enjoy mentoring engineers, partnering with product teams, and solving problems that sit at the intersection of people and infrastructure. However you found your way here, whether hiring, collaborating, or just curious, I'm glad you stopped by.",
+    "visuals": [
+      {
+        "id": "pipelines",
+        "title": "CI/CD Pipelines",
+        "caption": "Automated paths from commit to production"
+      },
+      {
+        "id": "kubernetes",
+        "title": "Multi-Tenant Kubernetes",
+        "caption": "Shared platforms with isolation built in"
+      },
+      {
+        "id": "idp",
+        "title": "Internal Developer Platform",
+        "caption": "Self-service infrastructure for engineering teams"
+      },
+      {
+        "id": "cost",
+        "title": "Cloud Cost Optimization",
+        "caption": "Right-sizing and automation that saves real money"
+      },
+      {
+        "id": "observability",
+        "title": "Observability & Governance",
+        "caption": "Metrics, logs, and guardrails you can trust"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "title": "Senior Specialist - Infra and Cloud",
+      "company": "TIAA",
+      "location": "Pune, India",
+      "period": "Jul 2025 - Present",
+      "summary": "Maturing in-house EKS and OpenShift platforms, expanding into SRE ownership, and bringing Kubernetes-native infrastructure management and AI-assisted automation to enterprise cloud operations.",
+      "highlights": [
+        "Maturing in-house EKS and OpenShift platforms to improve reliability and keep uptime stable through maintenance windows, not just during steady state.",
+        "Driving adoption of Crossplane for a Kubernetes-native approach to cloud infrastructure, with continuous reconciliation that keeps resource state aligned and drift close to zero.",
+        "Took on additional SRE responsibilities to deepen platform knowledge from an operational lens: incident response, reliability patterns, and how platforms behave under real production load.",
+        "Expanding the automation footprint by applying AI tooling to repetitive platform tasks, reducing manual hours on work that should not need a human every time.",
+        "Building a framework to correlate signals across monitoring and observability tools, shortening the path from alert to root cause during incident troubleshooting.",
+        "Working on GPU workload and cost optimization strategies so accelerated compute is allocated based on actual demand, not oversized standing reservations.",
+        "Exploring AWS Bedrock AgentCore for platform engineering use cases, including intelligent runbook assistance and faster operational decision-making at scale."
+      ]
+    },
+    {
+      "title": "Specialist DevOps Engineer",
+      "company": "NICE Actimize",
+      "location": "Pune, India",
+      "period": "Jan 2025 - Jul 2025",
+      "summary": "Focused on cloud cost optimization, Terraform platform improvements, and operational readiness for a GenAI MVP on AWS.",
+      "highlights": [
+        "Cut cloud spend by roughly 30% through right-sizing and event-driven automation, improving utilization without trading away uptime.",
+        "Refactored Terraform modules for reuse and consistency so infrastructure changes moved faster across teams.",
+        "Helped shape a GenAI MVP on AWS with Well-Architected patterns built in for multi-tenancy, scale, and data isolation."
+      ]
+    },
+    {
+      "title": "DevOps Engineering Lead",
+      "company": "ZS Associates",
+      "location": "Ahmedabad, India",
+      "period": "Oct 2021 - Jan 2025",
+      "summary": "Led platform engineering for enterprise SaaS at scale: internal developer platforms, multi-tenant Kubernetes, and the operational backbone behind hundreds of clusters.",
+      "highlights": [
+        "Owned platform operations across 25+ AWS accounts, 100+ EKS clusters, 600+ ECS clusters, and 1,500+ EC2 and Fargate nodes supporting multiple SaaS products.",
+        "Built infrastructure CI/CD with Terraform for provisioning, patching, and upgrades, with observability wired in through Prometheus, Grafana, Loki, Promtail, and Datadog.",
+        "Architected and rolled out an Internal Developer Platform on EKS and Terraform Cloud, giving Python and Node teams self-service workflows that still met security and compliance requirements.",
+        "Introduced GitOps with ArgoCD and Bitbucket so platform and application changes moved from commit to cluster with clear, reviewable promotion paths.",
+        "Designed multi-tenant EKS with RBAC tied to Azure Entra ID and AWS IAM, so many teams could share clusters without blurring ownership or access boundaries.",
+        "Scaled clusters with demand using Karpenter for nodes and KEDA with HPA for workloads, replacing static capacity planning with event-driven growth.",
+        "Improved GPU utilization with DCGM, Prometheus Adapter, and HPA so costly hardware was allocated based on real usage, not generous reservations.",
+        "Standardized AWS landing zones through reusable Terraform modules, turning one-off environment builds into repeatable, reviewable platform deliveries.",
+        "Strengthened the security posture by embedding SAST and DAST in CI/CD (Wiz, SonarQube, Black Duck, Veracode) and runtime protection with Sysdig Falco on container workloads.",
+        "Mentored DevOps engineers and partnered with product teams on platform adoption, golden paths, and operational readiness for large-scale on-call coverage."
+      ]
+    },
+    {
+      "title": "Senior DevOps Engineer",
+      "company": "Codal Inc.",
+      "location": "Ahmedabad, India",
+      "period": "Jan 2020 - Oct 2021",
+      "summary": "Built CI/CD, Kubernetes, and cloud automation across polyglot application stacks and multi-cloud migrations for client delivery teams.",
+      "highlights": [
+        "Built CI/CD for Django, Node, Angular, and Java applications using AWS CodePipeline, GitHub Actions, and Jenkins.",
+        "Ran microservices on Docker Compose and Kubernetes across AWS ECS and EKS, with security baselines applied to cluster and image workflows.",
+        "Codified infrastructure in CloudFormation and Terraform so new environments were provisioned the same way every time.",
+        "Delivered serverless release pipelines with SAM, API Gateway, and Lambda for teams that needed fast iteration without long-lived servers.",
+        "Supported migrations between on-prem, AWS, and Azure while tuning latency and cloud spend for production workloads."
+      ]
+    },
+    {
+      "title": "Programmer Analyst",
+      "company": "Cognizant",
+      "location": "Chennai, India",
+      "period": "Jul 2016 - Nov 2019",
+      "summary": "Started in cloud migration, release automation, and observability for enterprise manufacturing systems moving off on-prem infrastructure.",
+      "highlights": [
+        "Migrated manufacturing systems from on-prem to cloud while keeping production workflows stable for operations teams.",
+        "Introduced blue-green deployments on critical paths so releases no longer meant planned downtime windows.",
+        "Built ELK pipelines and Kibana views so web access patterns were visible instead of buried in raw logs.",
+        "Set up CloudWatch log streams and handled Linux administration across EC2 fleets during the transition.",
+        "Automated VM patching with Ansible when manual maintenance stopped scaling with fleet size."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Tech.",
+      "institution": "SRM University, Chennai",
+      "period": "2012 · 2016",
+      "detail": "8.96 GPA"
+    }
+  ],
+  "skillsIntro": {
+    "subtitle": "The platforms I operate, the pipelines I automate, and the observability stack I reach for when production gets interesting."
+  },
+  "skills": [
+    {
+      "id": "platform",
+      "category": "Platform Engineering",
+      "shortLabel": "Platform",
+      "description": "Designing and maturing Kubernetes platforms that stay reliable through upgrades, maintenance windows, and everyday change.",
+      "accent": "#3b82f6",
+      "span": 2,
+      "items": [
+        "Kubernetes",
+        "Amazon EKS",
+        "OpenShift",
+        "Docker",
+        "Helm",
+        "Crossplane"
+      ]
+    },
+    {
+      "id": "cloud",
+      "category": "Cloud & Infrastructure",
+      "shortLabel": "Cloud",
+      "description": "Provisioning and governing multi-cloud environments with infrastructure as code and repeatable patterns.",
+      "accent": "#f59e0b",
+      "span": 1,
+      "items": [
+        "AWS",
+        "Azure",
+        "Terraform",
+        "CloudFormation",
+        "Ansible"
+      ]
+    },
+    {
+      "id": "delivery",
+      "category": "Delivery & GitOps",
+      "shortLabel": "Delivery",
+      "description": "Shipping software safely with GitOps workflows, automated pipelines, and policy-aware release paths.",
+      "accent": "#10b981",
+      "span": 1,
+      "items": [
+        "ArgoCD",
+        "GitHub Actions",
+        "GitLab",
+        "Jenkins",
+        "TeamCity",
+        "Azure DevOps",
+        "BitBucket"
+      ]
+    },
+    {
+      "id": "observability",
+      "category": "Observability & SRE",
+      "shortLabel": "SRE",
+      "description": "Correlating signals across the stack so incidents move from alert to root cause faster.",
+      "accent": "#a78bfa",
+      "span": 1,
+      "items": [
+        "Prometheus",
+        "Grafana",
+        "Datadog",
+        "SignalFx",
+        "Sysdig",
+        "Splunk",
+        "ELK",
+        "CloudWatch"
+      ]
+    },
+    {
+      "id": "systems",
+      "category": "Systems & Scripting",
+      "shortLabel": "Systems",
+      "description": "Linux-first automation, shell glue, and Python when a problem needs more than bash one-liners.",
+      "accent": "#94a3b8",
+      "span": 1,
+      "items": [
+        "Linux",
+        "Bash",
+        "Python"
+      ]
+    },
+    {
+      "id": "ai",
+      "category": "AI & Accelerated Compute",
+      "shortLabel": "AI",
+      "description": "Optimizing GPU workloads and exploring AI-native tooling for platform operations and cost control.",
+      "accent": "#ec4899",
+      "span": 3,
+      "items": [
+        "GPU cost optimization",
+        "AWS Bedrock",
+        "AgentCore",
+        "AI-assisted automation"
+      ]
+    }
+  ],
+  "projectsIntro": {
+    "subtitle": "Implementation stories from platforms I have built and operated. Scroll the rail and open a case study for architecture detail."
+  },
+  "projects": [
+    {
+      "id": "bottlerocket-eks-migration",
+      "title": "Bottlerocket Migration on EKS",
+      "summary": "I migrated production EKS worker fleets from Amazon Linux 2 to Bottlerocket without breaking DaemonSets, GitOps flows, or release cadence.",
+      "tags": [
+        "Bottlerocket",
+        "Amazon EKS",
+        "Terraform",
+        "Security"
+      ],
+      "accent": "#f59e0b",
+      "detail": {
+        "overview": "With EKS 1.32 and the AL2 deprecation window approaching, I owned the node OS migration for several clusters. The goal was not just a new AMI: I needed immutable nodes, fewer packages on the host, and a rollout pattern our application teams could trust while we kept observability, CNI, and security agents intact.",
+        "highlights": [
+          "Stood up Bottlerocket node groups alongside AL2 and cut over workload-by-workload with cordon/drain runbooks.",
+          "Re-validated every platform DaemonSet (CNI, ADOT, Sysdig, log forwarders) against Bottlerocket's admin container model.",
+          "Kept provisioning in Terraform so launch templates, IAM, and AMI pins stayed reviewable like any other platform change."
+        ],
+        "sections": [
+          {
+            "type": "text",
+            "title": "Why I pushed for Bottlerocket",
+            "body": "General-purpose AMIs accumulate packages and patching debt. Bottlerocket gives me an API-driven node surface, automatic security updates, and a smaller blast radius. For a fleet our size, that means less SSH-style troubleshooting on nodes and clearer separation between what the platform owns versus what workloads own."
+          },
+          {
+            "type": "text",
+            "title": "How I ran the migration",
+            "body": "I created parallel managed node groups on Bottlerocket, pinned AMIs for EKS 1.32, and ran a checklist per cluster: CNI health, DNS, image pulls, init hooks, and pod security contexts that assumed AL2 paths. Teams moved namespaces in waves. I kept AL2 groups until error budgets and synthetic checks were clean, then decommissioned old groups through the same IaC pipeline."
+          },
+          {
+            "type": "text",
+            "title": "What broke and how I fixed it",
+            "body": "The surprises were never Kubernetes itself; they were agents that expected a full Linux userland. I adjusted Helm values for hostPath mounts, moved some bootstrap logic into DaemonSets with explicit tolerations, and documented which operational playbooks no longer applied (package installs on nodes, ad-hoc ssh debugging). Platform runbooks now start from the admin container."
+          },
+          {
+            "type": "illustration",
+            "title": "Rollout pattern I used",
+            "src": "/projects/bottlerocket-eks-migration/rollout.svg",
+            "alt": "Diagram showing AL2 node group drain, Bottlerocket validation, and workload reschedule",
+            "caption": "Parallel node groups, gated by DaemonSet and CNI validation before AL2 teardown."
+          }
+        ]
+      }
+    },
+    {
+      "id": "karpenter-eks-autoscaling",
+      "title": "Karpenter on AWS EKS",
+      "summary": "I replaced Cluster Autoscaler with Karpenter for faster scale-out, smarter instance choice, and consolidation that actually saved money.",
+      "tags": [
+        "Karpenter",
+        "Amazon EKS",
+        "Terraform",
+        "FinOps"
+      ],
+      "accent": "#3b82f6",
+      "detail": {
+        "overview": "Cluster Autoscaler was the bottleneck on bursty SaaS workloads: slow scale-ups, coarse ASG boundaries, and poor fit when pods needed mixed instance types or arm64. I implemented Karpenter with Terraform and Helm, wired spot interruption handling, and tuned disruption budgets so production could consolidate without surprise evictions.",
+        "highlights": [
+          "Provisioned right-sized nodes in seconds from pending pod specs instead of waiting on ASG policies.",
+          "Coded NodePools and EC2NodeClasses for Bottlerocket on Graviton (t4g, c6g, m6g) with on-demand and spot blends.",
+          "Integrated EventBridge and SQS for spot termination so workloads drained before instances disappeared."
+        ],
+        "sections": [
+          {
+            "type": "text",
+            "title": "The problem I was solving",
+            "body": "We had services that spiked on weekdays, batch jobs that appeared at night, and GPU or high-memory pods that did not map cleanly to a fixed ASG shape. CA kept either over-provisioning static groups or lagging long enough that HPA had already scaled pods into Pending. I needed per-pod provisioning decisions."
+          },
+          {
+            "type": "text",
+            "title": "What I built",
+            "body": "I deployed the Karpenter controller with IRSA, defined EC2NodeClass for our subnets, security groups, and Bottlerocket AMI selectors, and created NodePools with CPU limits, capacity-type requirements, and consolidation policies. Terraform owned IAM and the interruption queue; Helm owned the chart values and scheduling onto our platform nodegroup."
+          },
+          {
+            "type": "text",
+            "title": "Production tuning that mattered",
+            "body": "Disruption budgets were the difference between theory and production. I scheduled consolidation windows for underutilized nodes, kept drift remediation from fighting active releases, and paired Karpenter with KEDA-driven HPAs so scale-down did not starve scale-up. I validated with deliberate load tests: NodeClaims appearing, nodes joining Ready, and pods binding without manual intervention."
+          },
+          {
+            "type": "illustration",
+            "title": "Provisioning flow",
+            "src": "/projects/karpenter-eks-autoscaling/flow.svg",
+            "alt": "Karpenter flow from pending pods through NodeClaim to EC2 fleet and ready node",
+            "caption": "How I think about the path from Pending pod to schedulable capacity on the fleet."
+          }
+        ]
+      }
+    },
+    {
+      "id": "multi-account-eks-observability",
+      "title": "Multi-Account EKS Observability",
+      "summary": "I unified metrics, logs, and traces from dozens of AWS accounts into one monitoring plane so incidents did not start with console hopping.",
+      "tags": [
+        "CloudWatch",
+        "Amazon EKS",
+        "OAM",
+        "SRE"
+      ],
+      "accent": "#8b5cf6",
+      "detail": {
+        "overview": "Our EKS estate lived across many AWS accounts and Regions. Container Insights was already deployed, but during incidents engineers still jumped between accounts to find the right log group or metric. I designed a hub-and-spoke observability model: a central monitoring account, CloudWatch OAM sinks and links, and dashboards that answered fleet questions in one place.",
+        "highlights": [
+          "Cut context switching during incidents by replicating Regional telemetry into a monitoring account.",
+          "Enabled org-wide EKS Dashboard views for upgrade posture and support status.",
+          "Built cross-account cross-Region dashboards for executives and platform leads without duplicating agents."
+        ],
+        "sections": [
+          {
+            "type": "text",
+            "title": "The incident that forced the design",
+            "body": "A production issue should not begin with guessing which account owns a cluster. I mapped how long we spent correlating pod restarts across accounts and realized the data existed, it was just siloed. The fix had to reuse agents teams already ran, not ask every product squad to redeploy monitoring."
+          },
+          {
+            "type": "text",
+            "title": "Hub-and-spoke implementation",
+            "body": "I designated a monitoring account per environment tier, created OAM sinks in each Region we operated, and linked source accounts with least-privilege IAM. Metrics, logs, and traces replicated into the hub so Logs Insights queries and Contributor Insights worked as if everything were local. For global views I added cross-account cross-Region dashboards that assume read roles into spokes on demand."
+          },
+          {
+            "type": "text",
+            "title": "How I use it day to day",
+            "body": "The EKS Dashboard gives me strategic answers: which clusters lag on versions, where extended support costs are heading, which AMIs dominate managed node groups. CloudWatch gives me operational depth: pod CPU spikes, error rates, trace correlation. New accounts onboard by creating a link, not by rebuilding dashboards from scratch."
+          },
+          {
+            "type": "illustration",
+            "title": "Architecture I operated",
+            "src": "/projects/multi-account-eks-observability/hub-spoke.svg",
+            "alt": "Hub monitoring account receiving telemetry from multiple EKS spoke accounts",
+            "caption": "Spokes keep isolation; the hub owns sinks, dashboards, and cross-account queries."
+          }
+        ]
+      }
+    },
+    {
+      "id": "argocd-at-scale",
+      "title": "Argo CD at Scale",
+      "summary": "I scaled GitOps across 100+ EKS clusters with a three-level repo model, cluster labels, and Helm value hierarchies that developers could actually use.",
+      "tags": [
+        "ArgoCD",
+        "ApplicationSet",
+        "Helm",
+        "GitOps"
+      ],
+      "accent": "#10b981",
+      "detail": {
+        "overview": "Argo CD works on one cluster. At enterprise scale it breaks when every team copies Application YAML, templates the same Helm values three different ways, or registers clusters as snowflakes. I standardized how we structure Git, how ApplicationSets target clusters, and how promotions layer Helm values so platform teams ship once and application teams stay in their lane.",
+        "highlights": [
+          "Split category-1 Kubernetes manifests (apps/) from category-2 ApplicationSets (appsets/) so developers never edit platform CRDs.",
+          "Labeled cluster secrets with env, region, cloud, and type=workload instead of hand-writing Applications per cluster.",
+          "Used Helm value file stacks and multi-source apps so promotions did not need another templating engine."
+        ],
+        "sections": [
+          {
+            "type": "text",
+            "title": "Three levels, one mental model",
+            "body": "Level 1 is apps/<service>/envs/<env>: pure Kustomize or Helm that could deploy without Argo CD. Level 2 is appsets/ where generators discover paths like apps/*/envs/qa and create Applications automatically. Level 3, optional app-of-apps, bootstraps a blank cluster. I refuse to put Helm templating in ApplicationSets; that is how repos become unreadable."
+          },
+          {
+            "type": "text",
+            "title": "Cluster labels instead of snowflakes",
+            "body": "I register clusters with labels for promotion stage, region, cloud provider, and whether the cluster is a workload or hub. ApplicationSets use cluster generators with selectors: all workload clusters, EU only, GCP excluding AWS, production Asia. Adding a cluster is labeling a secret, not opening ten pull requests. Day-2, removing a cluster is removing a label and letting GitOps prune."
+          },
+          {
+            "type": "text",
+            "title": "Helm hierarchies for real promotions",
+            "body": "I stack value files in order: common-values.yaml, then all-prod-envs.yaml, then cluster-specific overrides. Argo CD applies the last file wins rule natively. For charts living in external registries I use multi-source Applications: chart from the registry, values from our Git repo via ref and $values prefixes. I have seen teams add Go templating on top of Helm; I push back. Helm already has hierarchies."
+          },
+          {
+            "type": "text",
+            "title": "What changed for developers",
+            "body": "A developer who wants the QA config for invoices opens apps/invoices/envs/qa. They do not touch ApplicationSets. Platform owns appsets/ and cluster labels. When someone asks for a new region in production, I adjust selectors and value files, not copy-paste Applications. That separation is what kept GitOps maintainable past the first hundred clusters."
+          },
+          {
+            "type": "illustration",
+            "title": "Repository layout I enforce",
+            "src": "/projects/argocd-at-scale/gitops-layers.svg",
+            "alt": "Three-level GitOps layout with apps, appsets, and optional app of apps",
+            "caption": "Helm and Kustomize live only at the application manifest layer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "vpc-cni-to-cilium",
+      "title": "VPC CNI to Cilium",
+      "summary": "I led the move from AWS VPC CNI to Cilium for eBPF networking, tighter policy, and better visibility into east-west traffic on EKS.",
+      "tags": [
+        "Cilium",
+        "CNI",
+        "Amazon EKS",
+        "eBPF"
+      ],
+      "accent": "#06b6d4",
+      "detail": {
+        "overview": "VPC CNI served us well early on, but as pod density and east-west traffic grew, ENI limits and security-group coupling became recurring incident themes. I planned and executed a Cilium rollout with chained CNI migration, validation against our load balancer controller and observability stack, and a policy model teams could adopt incrementally.",
+        "highlights": [
+          "Reduced reliance on per-node ENI consumption for pod networking at scale.",
+          "Gave platform and security teams Kubernetes-native NetworkPolicy with Hubble flow visibility.",
+          "Rolled out through new node groups so existing workloads migrated without a big-bang cutover."
+        ],
+        "sections": [
+          {
+            "type": "text",
+            "title": "Why I recommended Cilium",
+            "body": "I was tired of debugging whether a connectivity issue was Kubernetes, the VPC CNI plugin, or security groups. Cilium's eBPF dataplane gives me identity-aware policy and flow logs in one place. For platform engineering that means faster root cause and fewer 'works on one node group only' mysteries."
+          },
+          {
+            "type": "text",
+            "title": "Migration plan I executed",
+            "body": "I stood up Bottlerocket or AL2023 node groups with Cilium as the primary CNI, validated CoreDNS, ingress, and service mesh sidecars, then drained legacy VPC CNI nodes namespace by namespace. I ran parallel clusters in lower environments first and captured latency and policy tests before touching production payment paths."
+          },
+          {
+            "type": "text",
+            "title": "Operational lessons",
+            "body": "The work is not swapping a Helm chart. It is re-educating teams on policy, confirming the AWS Load Balancer Controller still behaves with the new dataplane, and making sure Hubble or equivalent tracing is part of on-call tooling. I documented allowed patterns for hostNetwork pods and exceptions so we did not recreate snowflake nodes."
+          },
+          {
+            "type": "illustration",
+            "title": "Dataplane shift",
+            "src": "/projects/vpc-cni-to-cilium/dataplane.svg",
+            "alt": "Comparison of VPC CNI ENI path versus Cilium eBPF dataplane",
+            "caption": "What changed under the hood when I moved the fleet to Cilium."
+          }
+        ]
+      }
+    },
+    {
+      "id": "eks-cost-optimization",
+      "title": "EKS Cost Optimization",
+      "summary": "I ran a data-driven FinOps program on EKS: rightsizing greedy pods, fixing pet workloads that blocked consolidation, and collapsing fragmented node pools.",
+      "tags": [
+        "FinOps",
+        "Karpenter",
+        "Kubecost",
+        "Amazon EKS"
+      ],
+      "accent": "#ec4899",
+      "detail": {
+        "overview": "Cloud spend on Kubernetes is rarely one big waste; it is thousands of small decisions: oversized requests, replicas nobody dares scale down, and node pools duplicated per team. I partnered with application owners using Kubecost, Goldilocks, and Prometheus data to rightsizing workloads and unblock Karpenter consolidation without trading away resilience we actually need.",
+        "highlights": [
+          "Tripled schedulable pod density on representative nodes by aligning requests with measured usage.",
+          "Reduced replica sprawl by relaxing topology spread where maxSkew=1 was policy theater, not real HA.",
+          "Moved teams from isolated NodePools to shared pools with pod-level constraints, cutting summed peak CPU."
+        ],
+        "sections": [
+          {
+            "type": "text",
+            "title": "Greedy workloads I fixed first",
+            "body": "I found services requesting 800m CPU while using 200m. Nodes looked full to the scheduler while sitting near 21% real utilization. I sat with owners, pulled Kubecost and metrics-server history, and reset requests and limits. On one representative node class we went from two pods to six with the same hardware footprint."
+          },
+          {
+            "type": "text",
+            "title": "Pet workloads blocking the platform",
+            "body": "Strict pod disruption budgets and maxSkew=1 topology spread forced seven replicas across four AZs when four with maxSkew=3 still met our HA bar. Those choices also blocked Karpenter from consolidating empty nodes. I worked with SRE and product leads to set sensible PDB defaults, restrict do-not-disrupt annotations, and align terminationGracePeriod with real drain needs."
+          },
+          {
+            "type": "text",
+            "title": "Node pool fragmentation",
+            "body": "Every team wanted its own NodePool for isolation. Peaks do not align: frontend spikes at day, batch at night. I modeled summed peaks versus a shared pool and showed we could run the same workloads on roughly twenty percent less CPU capacity when constraints lived at the pod spec, not as duplicate infrastructure."
+          },
+          {
+            "type": "text",
+            "title": "How I keep savings from regressing",
+            "body": "Rightsizing is not a one-time project. I left Goldilocks recommendations visible in namespaces, wired cost views into platform office hours, and made oversized requests show up in CI policy checks where we could. FinOps only sticks when engineers see their own data, not when platform sends a spreadsheet."
+          },
+          {
+            "type": "illustration",
+            "title": "Waste patterns I target",
+            "src": "/projects/eks-cost-optimization/waste-model.svg",
+            "alt": "Diagram of greedy, pet, and isolated pool waste patterns on EKS",
+            "caption": "The three patterns I still look for on every cluster review."
+          }
+        ]
+      }
+    },
+    {
+      "id": "gpu-dynamic-partitioning",
+      "title": "Dynamic GPU Partitioning",
+      "summary": "I split expensive GPU nodes into the right slices for ML workloads instead of letting one training job lock an entire A100.",
+      "tags": [
+        "GPU",
+        "Kubernetes",
+        "MIG",
+        "ML"
+      ],
+      "accent": "#ec4899",
+      "detail": {
+        "overview": "GPU nodes were the fastest way to blow the cloud budget. Teams requested whole GPUs while inference sat idle and batch jobs queued. I implemented a partitioning strategy on Kubernetes that matched workload class to hardware slice: MIG profiles for predictable inference, time-slicing where isolation could relax, and metrics-driven scaling so we stopped paying for capacity nobody used.",
+        "highlights": [
+          "Mapped training, inference, and batch jobs to MIG, time-slicing, or dedicated GPU policies instead of one-size-fits-all requests.",
+          "Wired DCGM metrics through Prometheus and HPA so scale tracked real utilization, not generous reservations.",
+          "Cut idle GPU spend while keeping SLA-sensitive inference on isolated slices."
+        ],
+        "sections": [
+          {
+            "type": "text",
+            "title": "The problem on the ground",
+            "body": "A single notebook job could hold a full GPU for days. Inference pods requested nvidia.com/gpu: 1 because that was the only knob teams knew. Scheduler queues grew while utilization graphs stayed flat. I needed fractional allocation without turning the cluster into an unmaintainable custom scheduler project."
+          },
+          {
+            "type": "text",
+            "title": "Partitioning strategy I landed on",
+            "body": "For production inference I standardized on MIG profiles with explicit node labels and taints so only approved workloads landed on sliced hardware. For experimental training I allowed time-slicing with clear documentation on latency trade-offs. For large distributed jobs I kept dedicated GPU node pools with Karpenter backing so capacity appeared when queues built up and disappeared when jobs finished."
+          },
+          {
+            "type": "text",
+            "title": "Observability and scaling",
+            "body": "Partitioning only works if you can see utilization per slice. I deployed DCGM exporters, fed Prometheus Adapter, and tied HPA to GPU duty cycle and memory where it made sense. Platform office hours included a simple rule: if your job does not need a full device, it should not request one. That cultural nudge mattered as much as the technical controls."
+          },
+          {
+            "type": "illustration",
+            "title": "How I allocate GPU capacity",
+            "src": "/projects/gpu-dynamic-partitioning/partitioning.svg",
+            "alt": "GPU partitioning with MIG, time-slicing, and metrics-driven scaling",
+            "caption": "Different workload classes get different sharing models, all under metrics I can defend in a cost review."
+          }
+        ]
+      }
+    },
+    {
+      "id": "keda-at-scale",
+      "title": "KEDA at Scale",
+      "summary": "I combined VPA, HPA, and KEDA so each workload scaled the right way: right-sized pods, replica count, or event-driven burst.",
+      "tags": [
+        "KEDA",
+        "HPA",
+        "VPA",
+        "Autoscaling"
+      ],
+      "accent": "#10b981",
+      "detail": {
+        "overview": "Treating HPA as the only autoscaling tool left money and reliability on the table. Some services needed more replicas under CPU pressure, others needed bigger memory requests, and a large set only ran when a queue had messages. I rolled out a layered model: VPA for recommendation and right-sizing, HPA for stateless HTTP paths, and KEDA for event sources with scale-to-zero where idle cost was pure waste.",
+        "highlights": [
+          "Deployed KEDA ScaledObjects for queue-driven workers with scale-to-zero on idle non-production paths.",
+          "Used Goldilocks and VPA in recommendation mode to fix greedy requests without evicting during peak by accident.",
+          "Paired KEDA scale-out with Karpenter so new nodes appeared when triggers fired, not minutes later."
+        ],
+        "sections": [
+          {
+            "type": "text",
+            "title": "Why one autoscaler was not enough",
+            "body": "HPA scales replicas; it does not fix a pod requesting four gigabytes when it uses five hundred megabytes. VPA fixes requests but evicts pods when it acts in Auto mode. KEDA scales on external signals HPA never sees. I documented which pattern applied to which service class so teams did not paste the wrong YAML from Stack Overflow."
+          },
+          {
+            "type": "text",
+            "title": "How I deployed KEDA safely",
+            "body": "I started with non-production namespaces and RabbitMQ depth triggers, then expanded to cron scalers for nightly batch and Prometheus triggers for custom SLOs. Every ScaledObject had min and max bounds, fallback replicas when metrics disappeared, and alerts when scaling hit ceiling for too long. Scale-to-zero stayed off for anything with a hard latency SLO until we proved cold-start time."
+          },
+          {
+            "type": "text",
+            "title": "Combining with the node layer",
+            "body": "KEDA without node autoscaling just piles Pending pods. I connected KEDA scale-up signals to Karpenter NodePools sized for the instance families those workloads needed. The platform story became: event arrives, KEDA adds pods, Karpenter adds nodes, HPA fine-tunes replicas on steady-state HTTP, VPA whispers where requests are lying."
+          },
+          {
+            "type": "illustration",
+            "title": "Autoscaling layers I operate",
+            "src": "/projects/keda-at-scale/scaling-matrix.svg",
+            "alt": "VPA HPA and KEDA decision matrix for Kubernetes workloads",
+            "caption": "Pick the tool for the workload shape, not the other way around."
+          }
+        ]
+      }
+    },
+    {
+      "id": "multi-tenant-eks",
+      "title": "Multi-Tenant EKS",
+      "summary": "I automated tenant onboarding on shared EKS clusters with namespace isolation, RBAC, and quotas teams could not bypass.",
+      "tags": [
+        "Amazon EKS",
+        "Multi-Tenant",
+        "RBAC",
+        "Platform"
+      ],
+      "accent": "#3b82f6",
+      "detail": {
+        "overview": "Running one cluster per product team does not scale operationally. Running many tenants on one cluster without guardrails scales incidents. I built an onboarding pipeline that provisioned namespaces, network policies, resource quotas, and identity bindings from a single tenant registration event, so a new SaaS customer landed in a bounded blast radius instead of a shared free-for-all.",
+        "highlights": [
+          "Automated namespace creation with LimitRanges, ResourceQuotas, and default NetworkPolicies per tenant tier.",
+          "Bound Azure Entra ID groups and AWS IAM roles to Kubernetes RBAC so access matched organizational boundaries.",
+          "Standardized labels and annotations for cost allocation and observability correlation per tenant."
+        ],
+        "sections": [
+          {
+            "type": "text",
+            "title": "Isolation model I enforce",
+            "body": "Soft multi-tenancy on EKS means every tenant gets a namespace bundle: quota caps, deny-all network policy with explicit egress allow lists, and service accounts scoped to their secrets. Hard isolation workloads still get dedicated node pools via taints and tolerations when contracts require it. The default path is shared nodes with strong logical boundaries, not shared nodes with hope."
+          },
+          {
+            "type": "text",
+            "title": "Onboarding automation",
+            "body": "Registration captures tenant name, tier, and identity provider metadata. A control-plane service creates the namespace stack, applies GitOps manifests from a tenant template repo, and records tenant metadata in DynamoDB for downstream systems. Application teams receive a kubeconfig or portal access path that only sees their namespace. Manual kubectl onboarding for tenants is a failure mode I eliminated."
+          },
+          {
+            "type": "text",
+            "title": "What I watch in production",
+            "body": "Noisy neighbors show up first in quota exhaustion and DNS latency, not in polite emails. I dashboard per-tenant CPU, memory, and API server request rates, and I tie alerts to tenant labels so on-call knows which customer to call. Multi-tenancy is operable when telemetry is tenant-aware from day one."
+          },
+          {
+            "type": "illustration",
+            "title": "Tenant layout on a shared cluster",
+            "src": "/projects/multi-tenant-eks/isolation.svg",
+            "alt": "Multiple isolated tenant namespaces on one EKS cluster",
+            "caption": "One control plane, many bounded namespaces, automation doing the repetitive isolation work."
+          }
+        ]
+      }
+    },
+    {
+      "id": "eks-saas-throttling",
+      "title": "SaaS Throttling on EKS",
+      "summary": "I stopped noisy neighbors at the API Gateway before their traffic hit EKS, with per-tenant rate limits tied to subscription tier.",
+      "tags": [
+        "API Gateway",
+        "SaaS",
+        "Amazon EKS",
+        "Multi-Tenant"
+      ],
+      "accent": "#f59e0b",
+      "detail": {
+        "overview": "Resource quotas inside the cluster catch noisy tenants eventually. API Gateway catches them at the door. I put Amazon API Gateway in front of our EKS-hosted SaaS microservices and mapped each tenant to a usage plan with rate, burst, and quota limits aligned to their tier. Traffic that exceeded contract never reached the cluster, which protected shared services and gave product a lever for premium plans.",
+        "highlights": [
+          "Created usage plans per tier (basic, standard, premium) with distinct rate, burst, and monthly quota settings.",
+          "Issued a unique API key per tenant during onboarding and stored it with tenant metadata for JWT injection.",
+          "Used a Lambda authorizer to validate Cognito tokens and attach tenant context before requests reached the mesh."
+        ],
+        "sections": [
+          {
+            "type": "text",
+            "title": "Why throttling lives outside the cluster",
+            "body": "EKS can cap CPU and memory only after a pod schedules. A tenant flooding HTTP endpoints can still burn ingress controllers, service mesh sidecars, and shared databases before quotas bite. API Gateway evaluates throttles first, returns 429s predictably, and gives me billing-grade usage data per API key."
+          },
+          {
+            "type": "text",
+            "title": "Tiering mechanics I implemented",
+            "body": "Rate controls requests per second, burst controls concurrency, quota caps volume over a window. Basic tier tenants get lower burst so runaway scripts cannot starve others. Premium tiers get higher rate and quota. I chose one API key per tenant instead of one key per tier so a noisy basic customer cannot consume the shared key pool for an entire tier."
+          },
+          {
+            "type": "text",
+            "title": "Onboarding and auth flow",
+            "body": "Tenant registration creates the API key, associates it with the correct usage plan, and writes the key into Cognito custom claims. Client apps attach X-API-KEY from the JWT via an interceptor. Lambda authorizer validates the token, resolves tenant-id, and loads IdP metadata from DynamoDB before the request forwards to EKS. Services behind the gateway trust upstream auth and focus on business logic."
+          },
+          {
+            "type": "illustration",
+            "title": "Request path and throttles",
+            "src": "/projects/eks-saas-throttling/gateway-tiering.svg",
+            "alt": "API Gateway throttling tiered SaaS traffic before EKS",
+            "caption": "Tier limits enforced at the edge; the cluster sees only traffic that passed contract."
+          }
+        ]
+      }
+    },
+    {
+      "id": "terraform-to-crossplane",
+      "title": "Terraform to Crossplane",
+      "summary": "I moved platform infrastructure from Terraform-only workflows to Crossplane so AWS resources reconcile inside the same GitOps loop as our apps.",
+      "tags": [
+        "Crossplane",
+        "Terraform",
+        "AWS",
+        "GitOps"
+      ],
+      "accent": "#a78bfa",
+      "detail": {
+        "overview": "Terraform served us well for years, but platform infra lived in a different mental bucket than Kubernetes manifests. Drift appeared when console fixes never made it back to state files. I led a phased migration to Crossplane: compositions for standard AWS patterns, claims that application teams could request safely, and continuous reconciliation that pulled reality back toward Git without a separate pipeline for every resource type.",
+        "highlights": [
+          "Modeled reusable Compositions for RDS, S3, IAM, and networking primitives platform teams approved once.",
+          "Let product teams submit CompositeResourceClaims instead of raw Terraform modules or console clicks.",
+          "Reduced drift scope by reconciling managed resources in-cluster with the same PR review culture as app deploys."
+        ],
+        "sections": [
+          {
+            "type": "text",
+            "title": "Why I pushed for Crossplane",
+            "body": "The goal was not to delete Terraform overnight. It was to meet engineers where they already work: kubectl, GitOps, and cluster namespaces. Crossplane turns infrastructure into Kubernetes objects with controllers that keep fixing drift. That matches how I want platform APIs consumed: declarative, auditable, and boring."
+          },
+          {
+            "type": "text",
+            "title": "Migration approach that actually shipped",
+            "body": "I started with greenfield services and net-new environments. We wrapped existing Terraform modules as reference, then rebuilt high-churn resources as Compositions with strict spec schemas so claims could not request impossible combinations. Legacy stacks stayed on Terraform until a natural refactor window. Dual-running taught us where Composition APIs were too coarse and needed another abstraction layer."
+          },
+          {
+            "type": "text",
+            "title": "Operating reconcilers in production",
+            "body": "Crossplane is only as good as your composition design and provider version pinning. I treat provider upgrades like cluster upgrades: staging first, alert on reconciliation errors, and document breaking CRD changes. Platform on-call watches sync status the same way we watch Argo CD health. Drift from manual AWS console edits becomes a visible reconcile failure instead of a surprise bill."
+          },
+          {
+            "type": "illustration",
+            "title": "Control plane shift",
+            "src": "/projects/terraform-to-crossplane/migration.svg",
+            "alt": "Migration from Terraform pipelines to Crossplane reconciliation in Kubernetes",
+            "caption": "From plan/apply outside the cluster to continuous reconcile inside it."
+          }
+        ]
+      }
+    },
+    {
+      "id": "cicd-pipeline-security",
+      "title": "Securing CI/CD Pipelines",
+      "summary": "I embedded security gates in CI/CD so vulnerabilities and secrets were caught before production, not after an incident.",
+      "tags": [
+        "DevSecOps",
+        "CI/CD",
+        "SAST",
+        "Sysdig"
+      ],
+      "accent": "#ef4444",
+      "detail": {
+        "overview": "Fast pipelines and insecure pipelines look identical until something breaks. I redesigned our delivery path with shift-left controls: static analysis on every pull request, secret scanning in repos and build logs, container image scanning before deploy, and runtime protection on cluster. Security became a stage with clear pass/fail rules instead of a PDF checklist nobody opened.",
+        "highlights": [
+          "Integrated SonarQube, Wiz, Black Duck, and Veracode at defined stages without blocking merges on informational noise.",
+          "Scanned images in CI and enforced policy in admission so critical CVEs never reached production namespaces.",
+          "Deployed Sysdig Falco rules tuned for our workloads to catch runtime behavior pipelines cannot see."
+        ],
+        "sections": [
+          {
+            "type": "text",
+            "title": "Pipeline gates I defined",
+            "body": "Pull request: SAST and unit tests. Merge to main: build, SBOM generation, container scan, sign where required. Pre-deploy: DAST against staging, infrastructure policy checks on Terraform or Crossplane manifests. Promote to production only when security stages are green or have an approved exception with expiry. Exceptions without expiry are how tech debt becomes breach debt."
+          },
+          {
+            "type": "text",
+            "title": "Balancing speed and control",
+            "body": "Developers ignored gates that false-positive constantly. I tuned severities so critical and high findings blocked, mediums opened tickets, lows logged. Secret scanning ran on history once, then on diff forever. I paired tooling with office hours so teams understood fixes instead of clicking retry until someone disabled the stage."
+          },
+          {
+            "type": "text",
+            "title": "Runtime as the last line",
+            "body": "Pipeline security cannot catch everything. Falco watches for shell in containers, unexpected outbound connections, and privilege escalations in production. Alerts route to the same on-call rotation with runbooks that reference the owning service. DevSecOps works when build-time and runtime tell one story."
+          },
+          {
+            "type": "illustration",
+            "title": "Secure delivery path",
+            "src": "/projects/cicd-pipeline-security/pipeline.svg",
+            "alt": "CI/CD pipeline with SAST build scan deploy gates and runtime monitoring",
+            "caption": "Security stages are part of the pipeline diagram, not a separate compliance slide deck."
+          }
+        ]
+      }
+    }
+  ],
+  "contact": {
+    "email": "dbcelm@gmail.com",
+    "phone": "+91 (962) 740-3300",
+    "github": {
+      "label": "github.com/dbcelm",
+      "url": "https://github.com/dbcelm"
+    },
+    "linkedin": {
+      "label": "linkedin.com/in/dbcelm",
+      "url": "https://linkedin.com/in/dbcelm"
+    },
+    "cta": "Let's connect and build something amazing together!",
+    "resume": {
+      "url": "/Ayush_Tiwari.pdf",
+      "downloadName": "Ayush_Tiwari_Resume.pdf"
+    }
+  },
+  "nav": [
+    {
+      "id": "about",
+      "label": "About"
+    },
+    {
+      "id": "projects",
+      "label": "Projects"
+    },
+    {
+      "id": "experience",
+      "label": "Experience"
+    },
+    {
+      "id": "contact",
+      "label": "Contact"
+    }
+  ],
+  "footer": {
+    "copyright": "© 2026 Ayush Tiwari",
+    "tagline": "Powered by Kubernetes, AWS, and a passion for automation"
+  }
+}

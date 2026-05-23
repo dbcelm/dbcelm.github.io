@@ -1,0 +1,84 @@
+---
+import cv from '../../content/cv.json';
+import SectionHeading from '../ui/SectionHeading.astro';
+import AboutIllustrations from './AboutIllustrations.astro';
+---
+
+<section class="section" id="about">
+  <div class="container">
+    <SectionHeading label="01 · The story" title={cv.about.title} />
+    <div class="about__layout reveal" data-reveal>
+      <article class="about__content">
+        <p class="about__lead">{cv.about.lead}</p>
+        <div class="about__story">
+          {cv.about.story.map((paragraph) => (
+            <p class="about__text">{paragraph}</p>
+          ))}
+        </div>
+        <p class="about__closing">{cv.about.closing}</p>
+      </article>
+      <AboutIllustrations visuals={cv.about.visuals} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .about__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  @media (min-width: 1024px) {
+    .about__layout {
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--space-2xl);
+    }
+
+    .about__layout > :last-child {
+      position: relative;
+    }
+
+    .about__layout > :last-child::before {
+      content: '';
+      position: absolute;
+      inset: -2rem -1rem;
+      background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+      pointer-events: none;
+      z-index: 0;
+    }
+  }
+
+  .about__lead {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 3vw, 1.85rem);
+    font-weight: 500;
+    line-height: 1.55;
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+  }
+
+  .about__story {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .about__text {
+    font-size: clamp(1.02rem, 1.8vw, 1.12rem);
+    line-height: 1.85;
+    color: var(--color-text-muted);
+  }
+
+  .about__closing {
+    font-size: clamp(1.02rem, 1.8vw, 1.12rem);
+    line-height: 1.85;
+    color: var(--color-text);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+</style>

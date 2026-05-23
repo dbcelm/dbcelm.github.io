@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" fill="none">
+  <defs>
+    <filter id="sketch" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="4" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="0.9" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <rect width="720" height="280" rx="16" fill="#0b0b10"/>
+  <rect x="0.5" y="0.5" width="719" height="279" rx="15.5" stroke="rgba(255,255,255,0.06)"/>
+  <g opacity="0.18" fill="#64748b">
+    <circle cx="32" cy="28" r="0.8"/><circle cx="56" cy="28" r="0.8"/><circle cx="80" cy="28" r="0.8"/>
+    <circle cx="640" cy="252" r="0.8"/><circle cx="664" cy="252" r="0.8"/><circle cx="688" cy="252" r="0.8"/>
+  </g>
+  <text x="28" y="36" fill="#475569" font-family="Georgia, serif" font-size="12" font-style="italic"> bottlerocket rollout </text>
+  <g filter="url(#sketch)" stroke-linecap="round" stroke-linejoin="round">
+<rect x="96" y="78" width="92" height="68" rx="8" stroke="#64748b" stroke-width="1.6" fill="rgba(100,116,139,0.04)"/>
+    <path d="M204 112 H248" stroke="#64748b" stroke-width="1.6" opacity="0.5"/>
+    <polygon points="248,112 238,106 238,118" fill="#64748b" opacity="0.5"/>
+    <rect x="268" y="72" width="96" height="80" rx="8" stroke="#f59e0b" stroke-width="1.8" fill="rgba(245,158,11,0.07)"/>
+    <circle cx="316" cy="112" r="12" stroke="#f59e0b" stroke-width="1.5" fill="none" opacity="0.75"/>
+    <path d="M380 112 H424" stroke="#f59e0b" stroke-width="1.8"/>
+    <polygon points="424,112 414,106 414,118" fill="#f59e0b"/>
+    <ellipse cx="492" cy="112" rx="38" ry="30" stroke="#22c55e" stroke-width="1.8" fill="rgba(34,197,94,0.06)"/>
+    <path d="M120 196 Q280 184 440 192 Q560 200 640 188" stroke="#3b82f6" stroke-width="1.3" opacity="0.28" stroke-dasharray="5 7"/>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#ffffff">
+    <text x="118" y="118" font-size="11" font-weight="500" opacity="1">AL2</text>
+    <text x="292" y="118" font-size="10" font-weight="500" opacity="1">Bottlerocket</text>
+    <text x="468" y="116" font-size="10" font-weight="500" opacity="1">EKS nodes</text>
+  </g>
+
+  <text x="248" y="248" fill="#64748b" font-family="Georgia, serif" font-size="11" font-style="italic" opacity="0.5">drain · validate · cutover</text>
+</svg>

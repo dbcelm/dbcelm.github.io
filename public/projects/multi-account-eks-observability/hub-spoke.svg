@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" fill="none">
+  <defs>
+    <filter id="sketch" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="11" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="0.9" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <rect width="720" height="280" rx="16" fill="#0b0b10"/>
+  <rect x="0.5" y="0.5" width="719" height="279" rx="15.5" stroke="rgba(255,255,255,0.06)"/>
+  <g opacity="0.18" fill="#64748b">
+    <circle cx="32" cy="28" r="0.8"/><circle cx="56" cy="28" r="0.8"/><circle cx="80" cy="28" r="0.8"/>
+    <circle cx="640" cy="252" r="0.8"/><circle cx="664" cy="252" r="0.8"/><circle cx="688" cy="252" r="0.8"/>
+  </g>
+  <text x="28" y="36" fill="#475569" font-family="Georgia, serif" font-size="12" font-style="italic"> observability hub </text>
+  <g filter="url(#sketch)" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="360" cy="128" r="46" stroke="#8b5cf6" stroke-width="1.8" fill="rgba(139,92,246,0.08)"/>
+    <ellipse cx="128" cy="78" rx="54" ry="34" stroke="#64748b" stroke-width="1.6" fill="rgba(100,116,139,0.04)"/>
+    <ellipse cx="592" cy="78" rx="54" ry="34" stroke="#64748b" stroke-width="1.6" fill="rgba(100,116,139,0.04)"/>
+    <ellipse cx="148" cy="196" rx="50" ry="32" stroke="#64748b" stroke-width="1.6" fill="rgba(100,116,139,0.04)"/>
+    <ellipse cx="572" cy="196" rx="50" ry="32" stroke="#64748b" stroke-width="1.6" fill="rgba(100,116,139,0.04)"/>
+    <path d="M182 88 Q260 108 314 116" stroke="#64748b" stroke-width="1.5" opacity="0.55"/>
+    <path d="M538 88 Q460 108 406 116" stroke="#64748b" stroke-width="1.5" opacity="0.55"/>
+    <path d="M188 184 Q260 156 318 140" stroke="#64748b" stroke-width="1.5" opacity="0.55"/>
+    <path d="M532 184 Q460 156 402 140" stroke="#64748b" stroke-width="1.5" opacity="0.55"/>
+    <path d="M280 208 Q360 196 440 208" stroke="#3b82f6" stroke-width="1.2" opacity="0.25" stroke-dasharray="4 6"/>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#ffffff">
+    <text x="334" y="124" font-size="11" font-weight="500" opacity="1">Hub</text>
+    <text x="318" y="140" font-size="9" font-weight="500" opacity="0.82">Monitor</text>
+    <text x="100" y="82" font-size="9" font-weight="500" opacity="1">Account A</text>
+    <text x="564" y="82" font-size="9" font-weight="500" opacity="1">Account B</text>
+    <text x="120" y="200" font-size="9" font-weight="500" opacity="1">Account C</text>
+    <text x="544" y="200" font-size="9" font-weight="500" opacity="1">Account D</text>
+  </g>
+
+  <text x="232" y="248" fill="#64748b" font-family="Georgia, serif" font-size="11" font-style="italic" opacity="0.5">metrics · logs · traces in one pane</text>
+</svg>

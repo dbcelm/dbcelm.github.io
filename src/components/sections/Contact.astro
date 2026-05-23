@@ -1,0 +1,331 @@
+---
+import cv from '../../content/cv.json';
+import SectionHeading from '../ui/SectionHeading.astro';
+
+const channels = [
+  {
+    id: 'email',
+    label: 'Email',
+    value: cv.contact.email,
+    href: `mailto:${cv.contact.email}`,
+    external: false,
+  },
+  {
+    id: 'phone',
+    label: 'Phone',
+    value: cv.contact.phone,
+    href: `tel:${cv.contact.phone.replace(/\s/g, '')}`,
+    external: false,
+  },
+  {
+    id: 'github',
+    label: 'GitHub',
+    value: cv.contact.github.label,
+    href: cv.contact.github.url,
+    external: true,
+  },
+  {
+    id: 'linkedin',
+    label: 'LinkedIn',
+    value: cv.contact.linkedin.label,
+    href: cv.contact.linkedin.url,
+    external: true,
+  },
+];
+---
+
+<section class="section contact" id="contact">
+  <div class="container">
+    <SectionHeading label="05 · Connect" title="Contact Me" />
+
+    <div class="contact-panel reveal" data-reveal>
+      <div class="contact-panel__head">
+        <p class="contact-panel__lead">{cv.contact.cta}</p>
+        <div class="contact-panel__actions">
+          <a href={`mailto:${cv.contact.email}`} class="contact__btn contact__btn--primary">
+            Send Email
+            <svg class="contact__btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"/>
+            </svg>
+          </a>
+          <a
+            href={cv.contact.resume.url}
+            class="contact__btn contact__btn--secondary"
+            download={cv.contact.resume.downloadName}
+          >
+            Resume
+            <svg class="contact__btn-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 5v10M8 11l4 4 4-4M5 19h14"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-panel__grid">
+        {channels.map((channel) => (
+          <a
+            href={channel.href}
+            class={`contact-channel contact-channel--${channel.id}`}
+            target={channel.external ? '_blank' : undefined}
+            rel={channel.external ? 'noopener noreferrer' : undefined}
+          >
+            <span class="contact-channel__icon" aria-hidden="true">
+              {channel.id === 'email' && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="5" width="18" height="14" rx="2"/>
+                  <path d="M3 7l9 6 9-6"/>
+                </svg>
+              )}
+              {channel.id === 'phone' && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M6.5 4h3l1.5 5-2 1.2a11 11 0 005.3 5.3L17.5 14l5 1.5v3a2 2 0 01-2.2 2 16 16 0 01-14.8-14.8A2 2 0 016.5 4z"/>
+                </svg>
+              )}
+              {channel.id === 'github' && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M9 19c-4 1.5-4-2.5-6-3m12 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77 5.44 5.44 0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+                </svg>
+              )}
+              {channel.id === 'linkedin' && (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="3" y="3" width="18" height="18" rx="2"/>
+                  <path d="M8 11v5M8 8v.01M12 16v-5M12 11a2 2 0 114 0v5"/>
+                </svg>
+              )}
+            </span>
+            <span class="contact-channel__body">
+              <span class="contact-channel__label">{channel.label}</span>
+              <span class="contact-channel__value">{channel.value}</span>
+            </span>
+            <svg class="contact-channel__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M7 17L17 7M17 7H9M17 7v8"/>
+            </svg>
+          </a>
+        ))}
+      </div>
+
+      <p class="contact-panel__status" aria-hidden="true">
+        <span class="contact-panel__dot" />
+        <span class="contact-panel__mono">status: available for conversations</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-panel {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(1.5rem, 4vw, 2.25rem);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-accent);
+    background:
+      radial-gradient(circle at 100% 0%, rgba(59, 130, 246, 0.1), transparent 42%),
+      linear-gradient(145deg, rgba(59, 130, 246, 0.05), var(--color-bg-card));
+  }
+
+  .contact-panel__head {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  @media (min-width: 768px) {
+    .contact-panel__head {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  .contact-panel__lead {
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 3vw, 1.85rem);
+    font-weight: 500;
+    line-height: 1.45;
+    color: var(--color-text);
+    max-width: 28ch;
+  }
+
+  .contact-panel__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    flex-shrink: 0;
+  }
+
+  .contact-panel__grid {
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) {
+    .contact-panel__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .contact-channel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.15rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.02);
+    transition: border-color var(--transition), background var(--transition), transform var(--transition);
+  }
+
+  .contact-channel:hover {
+    border-color: var(--color-border-accent);
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateY(-2px);
+  }
+
+  .contact-channel__icon {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    flex-shrink: 0;
+    color: var(--channel-accent, var(--color-accent));
+    background: color-mix(in srgb, var(--channel-accent, var(--color-accent)) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--channel-accent, var(--color-accent)) 24%, transparent);
+  }
+
+  .contact-channel__icon svg {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+
+  .contact-channel--email { --channel-accent: #3b82f6; }
+  .contact-channel--phone { --channel-accent: #10b981; }
+  .contact-channel--github { --channel-accent: #e2e8f0; }
+  .contact-channel--linkedin { --channel-accent: #0ea5e9; }
+
+  .contact-channel__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .contact-channel__label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-mono);
+  }
+
+  .contact-channel__value {
+    font-size: 0.92rem;
+    color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .contact-channel__arrow {
+    flex-shrink: 0;
+    color: var(--color-mono);
+    opacity: 0;
+    transform: translate(-4px, 4px);
+    transition: opacity var(--transition), transform var(--transition), color var(--transition);
+  }
+
+  .contact-channel:hover .contact-channel__arrow {
+    opacity: 1;
+    transform: translate(0, 0);
+    color: var(--channel-accent, var(--color-accent));
+  }
+
+  .contact-panel__status {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .contact-panel__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.55);
+    animation: contact-pulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes contact-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contact-panel__dot {
+      animation: none;
+    }
+
+    .contact-channel:hover {
+      transform: none;
+    }
+  }
+
+  .contact-panel__mono {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    color: var(--color-mono);
+  }
+
+  .contact__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.6rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--color-text-muted);
+    transition: border-color var(--transition), color var(--transition), background var(--transition);
+  }
+
+  .contact__btn--primary {
+    color: var(--color-text);
+    border-color: rgba(59, 130, 246, 0.28);
+    background: rgba(59, 130, 246, 0.06);
+  }
+
+  .contact__btn--secondary {
+    background: transparent;
+  }
+
+  .contact__btn:hover {
+    border-color: var(--color-border-accent);
+    color: var(--color-text);
+    background: rgba(59, 130, 246, 0.08);
+  }
+
+  .contact__btn-icon {
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: opacity var(--transition), transform var(--transition);
+  }
+
+  .contact__btn:hover .contact__btn-icon {
+    opacity: 1;
+    transform: translateX(2px);
+  }
+</style>

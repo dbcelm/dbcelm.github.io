@@ -1,0 +1,26 @@
+---
+import cv from '../../content/cv.json';
+import SectionHeading from '../ui/SectionHeading.astro';
+import SkillMatrix from '../../islands/SkillMatrix';
+---
+
+<section class="section" id="skills">
+  <div class="container">
+    <SectionHeading label="04 · Stack" title="Technical Skills" />
+    {cv.skillsIntro?.subtitle && (
+      <p class="skills-intro reveal" data-reveal>{cv.skillsIntro.subtitle}</p>
+    )}
+    <SkillMatrix client:visible skills={cv.skills} />
+  </div>
+</section>
+
+<style>
+  .skills-intro {
+    font-size: clamp(1.02rem, 2vw, 1.15rem);
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    max-width: 58ch;
+    margin-top: calc(var(--space-md) * -1);
+    margin-bottom: var(--space-lg);
+  }
+</style>

@@ -1,0 +1,166 @@
+---
+import cv from '../../content/cv.json';
+import SectionHeading from '../ui/SectionHeading.astro';
+---
+
+<section class="section" id="experience">
+  <div class="container">
+    <SectionHeading label="03 · Career" title="Work Experience" />
+    <div class="timeline">
+      {cv.experience.map((job, index) => (
+        <article
+          class="timeline__item reveal"
+          data-reveal
+          style={`--delay: ${index * 0.1}s`}
+        >
+          <div class="timeline__marker" aria-hidden="true" />
+          <div class="timeline__card">
+            <div class="timeline__header">
+              <div class="timeline__identity">
+                <h3 class="timeline__company">{job.company}</h3>
+                <p class="timeline__title">{job.title}</p>
+              </div>
+              <div class="timeline__meta">
+                <time class="timeline__period">{job.period}</time>
+                {job.location && <p class="timeline__location">{job.location}</p>}
+              </div>
+            </div>
+            {job.summary && <p class="timeline__summary">{job.summary}</p>}
+            <ul class="timeline__highlights">
+              {job.highlights.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.4rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--color-accent), var(--color-border));
+  }
+
+  .timeline__item {
+    position: relative;
+    margin-bottom: var(--space-lg);
+  }
+
+  .timeline__marker {
+    position: absolute;
+    left: -1.65rem;
+    top: 1.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 0 16px var(--color-accent-glow);
+  }
+
+  .timeline__card {
+    padding: var(--space-md) var(--space-lg);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.06), var(--color-bg-card));
+    border: 1px solid var(--color-border-accent);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition), transform var(--transition);
+  }
+
+  .timeline__card:hover {
+    border-color: var(--color-border-accent);
+    transform: translateX(4px);
+  }
+
+  .timeline__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .timeline__identity {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .timeline__company {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.2;
+  }
+
+  .timeline__title {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--color-highlight);
+    margin-top: 0.35rem;
+    line-height: 1.4;
+  }
+
+  .timeline__meta {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .timeline__location {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-mono);
+    margin-top: 0.35rem;
+  }
+
+  .timeline__summary {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .timeline__period {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-mono);
+    white-space: nowrap;
+    display: block;
+  }
+
+  .timeline__highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .timeline__highlights li {
+    position: relative;
+    padding-left: 1.25rem;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .timeline__highlights li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-size: 0.75rem;
+  }
+</style>

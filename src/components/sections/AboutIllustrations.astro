@@ -1,0 +1,205 @@
+---
+interface Visual {
+  id: string;
+  title: string;
+  caption: string;
+}
+
+interface Props {
+  visuals: Visual[];
+}
+
+const { visuals } = Astro.props;
+---
+
+<aside class="about-visuals" aria-label="Work themes">
+  {visuals.map((visual, index) => (
+    <div class="about-visuals__item" data-visual={visual.id} style={`--i: ${index}`}>
+      <div class="about-visuals__glow" aria-hidden="true" />
+      <div class="about-visuals__art" aria-hidden="true">
+        {visual.id === 'pipelines' && (
+          <svg viewBox="0 0 160 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="38" width="32" height="32" rx="6" stroke="currentColor" stroke-width="1.25" opacity="0.9" />
+            <rect x="64" y="38" width="32" height="32" rx="6" stroke="currentColor" stroke-width="1.25" />
+            <rect x="120" y="38" width="32" height="32" rx="6" stroke="currentColor" stroke-width="1.25" opacity="0.9" />
+            <path d="M40 54h24M96 54h24" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" opacity="0.7" />
+            <circle cx="24" cy="54" r="4" fill="currentColor" opacity="0.45" />
+            <circle cx="80" cy="54" r="4" fill="currentColor" opacity="0.85" />
+            <circle cx="136" cy="54" r="4" fill="currentColor" opacity="0.45" />
+            <text x="14" y="92" fill="currentColor" opacity="0.35" font-family="monospace" font-size="8">build</text>
+            <text x="68" y="92" fill="currentColor" opacity="0.35" font-family="monospace" font-size="8">test</text>
+            <text x="118" y="92" fill="currentColor" opacity="0.35" font-family="monospace" font-size="8">deploy</text>
+          </svg>
+        )}
+        {visual.id === 'kubernetes' && (
+          <svg viewBox="0 0 160 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="80" cy="54" r="30" stroke="currentColor" stroke-width="1.25" opacity="0.2" />
+            <circle cx="80" cy="54" r="8" stroke="currentColor" stroke-width="1.25" opacity="0.85" />
+            <circle cx="48" cy="36" r="11" stroke="currentColor" stroke-width="1.25" opacity="0.75" />
+            <circle cx="112" cy="36" r="11" stroke="currentColor" stroke-width="1.25" opacity="0.75" />
+            <circle cx="48" cy="72" r="11" stroke="currentColor" stroke-width="1.25" opacity="0.75" />
+            <circle cx="112" cy="72" r="11" stroke="currentColor" stroke-width="1.25" opacity="0.75" />
+            <path d="M56 42l16 8M104 42L88 50M56 66l16-8M104 66L88 58" stroke="currentColor" stroke-width="1.25" opacity="0.45" stroke-linecap="round" />
+          </svg>
+        )}
+        {visual.id === 'idp' && (
+          <svg viewBox="0 0 160 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="28" y="72" width="104" height="14" rx="3" stroke="currentColor" stroke-width="1.25" opacity="0.25" />
+            <rect x="38" y="52" width="84" height="14" rx="3" stroke="currentColor" stroke-width="1.25" opacity="0.45" />
+            <rect x="48" y="32" width="64" height="14" rx="3" stroke="currentColor" stroke-width="1.25" opacity="0.75" />
+            <path d="M80 18v10" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" opacity="0.6" />
+            <circle cx="80" cy="14" r="4" fill="currentColor" opacity="0.5" />
+          </svg>
+        )}
+        {visual.id === 'cost' && (
+          <svg viewBox="0 0 160 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 78V28" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" opacity="0.2" />
+            <path d="M22 78h116" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" opacity="0.2" />
+            <path d="M36 64l24-16 20 10 34-28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85" />
+            <circle cx="118" cy="30" r="5" fill="currentColor" opacity="0.4" />
+            <text x="96" y="26" fill="currentColor" font-family="monospace" font-size="9" opacity="0.55">-30%</text>
+          </svg>
+        )}
+        {visual.id === 'observability' && (
+          <svg viewBox="0 0 160 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="24" width="120" height="58" rx="6" stroke="currentColor" stroke-width="1.25" opacity="0.2" />
+            <path d="M34 64l18-14 16 8 24-20 28 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85" />
+            <circle cx="122" cy="40" r="6" stroke="currentColor" stroke-width="1.25" opacity="0.7" />
+            <path d="M119 40l2.5 2.5 5-5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" opacity="0.7" />
+          </svg>
+        )}
+      </div>
+      <div class="about-visuals__label">
+        <span class="about-visuals__title">{visual.title}</span>
+        <span class="about-visuals__caption">{visual.caption}</span>
+      </div>
+    </div>
+  ))}
+</aside>
+
+<style>
+  .about-visuals {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-lg);
+    padding-block: var(--space-sm);
+  }
+
+  @media (min-width: 1024px) {
+    .about-visuals {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-xl);
+      position: sticky;
+      top: calc(var(--nav-height) + 1.5rem);
+      padding-block: var(--space-md);
+      z-index: 1;
+    }
+  }
+
+  .about-visuals__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: min(100%, 200px);
+    animation: visualFloat 7s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.6s);
+  }
+
+  @media (min-width: 1024px) {
+    .about-visuals__item:nth-child(odd) {
+      margin-inline-start: 1.25rem;
+    }
+
+    .about-visuals__item:nth-child(even) {
+      margin-inline-end: 1.25rem;
+    }
+  }
+
+  .about-visuals__glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 50% 45%,
+      rgba(59, 130, 246, 0.22) 0%,
+      rgba(59, 130, 246, 0.06) 50%,
+      transparent 72%
+    );
+    filter: blur(20px);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .about-visuals__art {
+    position: relative;
+    z-index: 1;
+    color: var(--color-accent);
+    width: 100%;
+    max-width: 180px;
+    filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.35));
+    opacity: 0.92;
+    transition: opacity var(--transition), transform var(--transition);
+  }
+
+  .about-visuals__item:hover .about-visuals__art {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+  .about-visuals__art svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .about-visuals__label {
+    position: relative;
+    z-index: 1;
+    margin-top: var(--space-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    opacity: 0.55;
+    transition: opacity var(--transition);
+  }
+
+  .about-visuals__item:hover .about-visuals__label {
+    opacity: 0.85;
+  }
+
+  .about-visuals__title {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+  }
+
+  .about-visuals__caption {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: var(--color-text-muted);
+    max-width: 16ch;
+    margin-inline: auto;
+  }
+
+  @keyframes visualFloat {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -8px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .about-visuals__item {
+      animation: none;
+    }
+
+    .about-visuals__item:nth-child(odd),
+    .about-visuals__item:nth-child(even) {
+      margin-inline: 0;
+    }
+  }
+</style>

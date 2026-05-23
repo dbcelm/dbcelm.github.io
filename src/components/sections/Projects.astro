@@ -1,0 +1,26 @@
+---
+import cv from '../../content/cv.json';
+import SectionHeading from '../ui/SectionHeading.astro';
+import ProjectShowcase from '../../islands/ProjectShowcase';
+---
+
+<section class="section" id="projects">
+  <div class="container">
+    <SectionHeading label="02 · Work" title="Key Projects" />
+    {cv.projectsIntro?.subtitle && (
+      <p class="projects-intro reveal" data-reveal>{cv.projectsIntro.subtitle}</p>
+    )}
+    <ProjectShowcase client:visible projects={cv.projects} />
+  </div>
+</section>
+
+<style>
+  .projects-intro {
+    font-size: clamp(1.02rem, 2vw, 1.12rem);
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    max-width: 62ch;
+    margin-top: calc(var(--space-md) * -1);
+    margin-bottom: var(--space-lg);
+  }
+</style>

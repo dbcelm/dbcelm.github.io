@@ -1,0 +1,45 @@
+---
+import cv from '../../content/cv.json';
+import StatCounter from '../../islands/StatCounter';
+---
+
+<section class="stats" id="stats" aria-labelledby="stats-headline">
+  <div class="container stats__inner">
+    <div class="stats__intro">
+      <span class="stats__label">{cv.statsIntro.label}</span>
+      <h2 class="stats__headline" id="stats-headline">{cv.statsIntro.headline}</h2>
+    </div>
+    <StatCounter client:visible stats={cv.stats} />
+  </div>
+</section>
+
+<style>
+  .stats {
+    padding-block: var(--space-xl);
+  }
+
+  .stats__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .stats__label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-xs);
+  }
+
+  .stats__headline {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-text-muted);
+    max-width: 42ch;
+  }
+</style>

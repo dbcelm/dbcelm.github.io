@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" fill="none">
+  <defs>
+    <filter id="sketch" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="25" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="0.9" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <rect width="720" height="280" rx="16" fill="#0b0b10"/>
+  <rect x="0.5" y="0.5" width="719" height="279" rx="15.5" stroke="rgba(255,255,255,0.06)"/>
+  <g opacity="0.18" fill="#64748b">
+    <circle cx="32" cy="28" r="0.8"/><circle cx="56" cy="28" r="0.8"/><circle cx="80" cy="28" r="0.8"/>
+    <circle cx="640" cy="252" r="0.8"/><circle cx="664" cy="252" r="0.8"/><circle cx="688" cy="252" r="0.8"/>
+  </g>
+  <text x="28" y="36" fill="#475569" font-family="Georgia, serif" font-size="12" font-style="italic"> shift-left security </text>
+  <g filter="url(#sketch)" stroke-linecap="round" stroke-linejoin="round">
+<path d="M96 196 Q196 156 296 136 Q396 116 496 126 Q596 136 636 156" stroke="#64748b" stroke-width="1.5" opacity="0.3"/>
+    <circle cx="120" cy="188" r="18" stroke="#3b82f6" stroke-width="1.6" fill="rgba(59,130,246,0.07)"/>
+    <circle cx="240" cy="148" r="18" stroke="#f59e0b" stroke-width="1.6" fill="rgba(245,158,11,0.07)"/>
+    <circle cx="360" cy="124" r="18" stroke="#8b5cf6" stroke-width="1.6" fill="rgba(139,92,246,0.07)"/>
+    <circle cx="480" cy="124" r="18" stroke="#22c55e" stroke-width="1.6" fill="rgba(34,197,94,0.07)"/>
+    <circle cx="600" cy="144" r="18" stroke="#ef4444" stroke-width="1.6" fill="rgba(239,68,68,0.07)"/>
+    <rect x="528" y="176" width="76" height="44" rx="8" stroke="#ec4899" stroke-width="1.5" fill="rgba(236,72,153,0.05)"/>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#ffffff">
+    <text x="108" y="192" font-size="9" font-weight="500" opacity="1">Git</text>
+    <text x="224" y="152" font-size="9" font-weight="500" opacity="1">SAST</text>
+    <text x="346" y="128" font-size="9" font-weight="500" opacity="1">Scan</text>
+    <text x="466" y="128" font-size="9" font-weight="500" opacity="1">Build</text>
+    <text x="586" y="148" font-size="9" font-weight="500" opacity="1">DAST</text>
+    <text x="548" y="204" font-size="9" font-weight="500" opacity="1">Falco</text>
+  </g>
+
+  <text x="168" y="248" fill="#64748b" font-family="Georgia, serif" font-size="11" font-style="italic" opacity="0.5">SonarQube · Wiz · runtime guardrails</text>
+</svg>

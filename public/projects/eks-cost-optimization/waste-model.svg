@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" fill="none">
+  <defs>
+    <filter id="sketch" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="15" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="0.9" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <rect width="720" height="280" rx="16" fill="#0b0b10"/>
+  <rect x="0.5" y="0.5" width="719" height="279" rx="15.5" stroke="rgba(255,255,255,0.06)"/>
+  <g opacity="0.18" fill="#64748b">
+    <circle cx="32" cy="28" r="0.8"/><circle cx="56" cy="28" r="0.8"/><circle cx="80" cy="28" r="0.8"/>
+    <circle cx="640" cy="252" r="0.8"/><circle cx="664" cy="252" r="0.8"/><circle cx="688" cy="252" r="0.8"/>
+  </g>
+  <text x="28" y="36" fill="#475569" font-family="Georgia, serif" font-size="12" font-style="italic"> right-size the fleet </text>
+  <g filter="url(#sketch)" stroke-linecap="round" stroke-linejoin="round">
+<rect x="108" y="84" width="72" height="112" rx="6" stroke="#ef4444" stroke-width="1.6" fill="rgba(239,68,68,0.05)"/>
+    <rect x="212" y="100" width="60" height="96" rx="6" stroke="#f59e0b" stroke-width="1.6" fill="rgba(245,158,11,0.05)"/>
+    <rect x="308" y="112" width="52" height="84" rx="6" stroke="#3b82f6" stroke-width="1.6" fill="rgba(59,130,246,0.05)"/>
+    <rect x="404" y="122" width="44" height="74" rx="6" stroke="#22c55e" stroke-width="1.6" fill="rgba(34,197,94,0.05)"/>
+    <rect x="492" y="130" width="36" height="66" rx="6" stroke="#22c55e" stroke-width="1.8" fill="rgba(34,197,94,0.07)"/>
+    <path d="M148 212 Q320 198 492 206 Q580 214 632 204" stroke="#64748b" stroke-width="1.2" opacity="0.25" stroke-dasharray="4 6"/>
+    <path d="M612 88 Q628 104 612 120" stroke="#22c55e" stroke-width="1.5" opacity="0.55"/>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#ffffff">
+    <text x="132" y="148" font-size="10" font-weight="500" opacity="1">XL</text>
+    <text x="232" y="152" font-size="10" font-weight="500" opacity="1">L</text>
+    <text x="328" y="158" font-size="10" font-weight="500" opacity="1">M</text>
+    <text x="418" y="162" font-size="10" font-weight="500" opacity="1">S</text>
+    <text x="502" y="166" font-size="10" font-weight="500" opacity="1">XS</text>
+    <text x="618" y="108" font-size="12" font-weight="500" opacity="0.85">$</text>
+  </g>
+
+  <text x="188" y="248" fill="#64748b" font-family="Georgia, serif" font-size="11" font-style="italic" opacity="0.5">greedy · pets · isolated workloads</text>
+</svg>

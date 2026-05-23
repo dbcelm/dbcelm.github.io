@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" fill="none">
+  <defs>
+    <filter id="sketch" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="0.9" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+  <rect width="720" height="280" rx="16" fill="#0b0b10"/>
+  <rect x="0.5" y="0.5" width="719" height="279" rx="15.5" stroke="rgba(255,255,255,0.06)"/>
+  <g opacity="0.18" fill="#64748b">
+    <circle cx="32" cy="28" r="0.8"/><circle cx="56" cy="28" r="0.8"/><circle cx="80" cy="28" r="0.8"/>
+    <circle cx="640" cy="252" r="0.8"/><circle cx="664" cy="252" r="0.8"/><circle cx="688" cy="252" r="0.8"/>
+  </g>
+  <text x="28" y="36" fill="#475569" font-family="Georgia, serif" font-size="12" font-style="italic"> gitops layers </text>
+  <g filter="url(#sketch)" stroke-linecap="round" stroke-linejoin="round">
+<rect x="152" y="172" width="416" height="40" rx="8" stroke="#22c55e" stroke-width="1.8" fill="rgba(34,197,94,0.06)"/>
+    <rect x="176" y="124" width="368" height="36" rx="8" stroke="#3b82f6" stroke-width="1.8" fill="rgba(59,130,246,0.06)"/>
+    <rect x="208" y="78" width="304" height="32" rx="8" stroke="#64748b" stroke-width="1.5" fill="rgba(100,116,139,0.03)"/>
+    <path d="M360 172 V164" stroke="#22c55e" stroke-width="1.4" opacity="0.5"/>
+    <path d="M360 124 V112" stroke="#3b82f6" stroke-width="1.4" opacity="0.5"/>
+    <circle cx="520" cy="192" r="16" stroke="#f59e0b" stroke-width="1.5" fill="none" opacity="0.7"/>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" fill="#ffffff">
+    <text x="188" y="198" font-size="10" font-weight="500" opacity="1">apps/ · manifests · helm</text>
+    <text x="204" y="148" font-size="10" font-weight="500" opacity="1">appsets/ · ApplicationSet</text>
+    <text x="236" y="100" font-size="10" font-weight="500" opacity="0.88">app-of-apps</text>
+  </g>
+
+  <text x="468" y="248" fill="#64748b" font-family="Georgia, serif" font-size="11" font-style="italic" opacity="0.5">three levels · one mental model</text>
+</svg>

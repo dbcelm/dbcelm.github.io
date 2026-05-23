@@ -1,0 +1,147 @@
+---
+import cv from '../../content/cv.json';
+
+const terminalCommand = 'kubectl get events';
+---
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p class="footer__copy">{cv.footer.copyright} · DevOps Engineer</p>
+    <p class="footer__terminal" id="footer-terminal" aria-hidden="true">
+      <span class="footer__prompt">$</span>
+      <span class="footer__command" id="footer-terminal-command" data-command={terminalCommand}></span>
+      <span class="footer__cursor" id="footer-terminal-cursor" aria-hidden="true"></span>
+    </p>
+    <p class="footer__tagline">{cv.footer.tagline}</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding-block: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .footer__copy {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+  }
+
+  .footer__terminal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-mono);
+  }
+
+  .footer__prompt {
+    color: var(--color-accent);
+  }
+
+  .footer__command {
+    color: #e2e8f0;
+    min-width: 0.5ch;
+  }
+
+  .footer__cursor {
+    display: inline-block;
+    width: 0.55em;
+    height: 1.05em;
+    margin-left: -0.15rem;
+    background: var(--color-accent);
+    opacity: 0;
+    transform: translateY(1px);
+  }
+
+  .footer__cursor.is-visible {
+    opacity: 1;
+  }
+
+  .footer__cursor.is-blink {
+    animation: footer-cursor-blink 1s step-end infinite;
+  }
+
+  @keyframes footer-cursor-blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .footer__tagline {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .footer__cursor.is-blink {
+      animation: none;
+      opacity: 1;
+    }
+  }
+</style>
+
+<script define:vars={{ terminalCommand }}>
+  const commandEl = document.getElementById('footer-terminal-command');
+  const cursorEl = document.getElementById('footer-terminal-cursor');
+  const terminalEl = document.getElementById('footer-terminal');
+  const command = commandEl?.dataset.command ?? terminalCommand;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const showCursor = (blink = true) => {
+    if (!cursorEl) return;
+    cursorEl.classList.add('is-visible');
+    cursorEl.classList.toggle('is-blink', blink);
+  };
+
+  const typeCommand = () => {
+    if (!commandEl) return;
+
+    commandEl.textContent = '';
+    showCursor(false);
+
+    let index = 0;
+    const step = () => {
+      if (index < command.length) {
+        commandEl.textContent += command[index++];
+        setTimeout(step, 48 + Math.random() * 32);
+        return;
+      }
+      showCursor(true);
+    };
+
+    step();
+  };
+
+  if (commandEl && terminalEl) {
+    if (reducedMotion) {
+      commandEl.textContent = command;
+      showCursor(true);
+    } else {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            typeCommand();
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.6 }
+      );
+      observer.observe(terminalEl);
+    }
+  }
+</script>
