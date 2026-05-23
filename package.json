@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.2.0",
-    "astro": "^5.5.0",
+    "astro": "^6.3.7",
     "gsap": "^3.12.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
