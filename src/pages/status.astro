@@ -1,0 +1,235 @@
+---
+import OpsLayout from '../layouts/OpsLayout.astro';
+import OpsHeader from '../components/ops/OpsHeader.astro';
+import OpsLiveMetrics from '../islands/OpsLiveMetrics';
+import { getStatusPayload, getStatusJson } from '../data/ops-endpoints';
+
+const payload = getStatusPayload();
+const json = getStatusJson();
+
+function badgeClass(status: string) {
+  const s = status.toLowerCase();
+  if (['healthy', 'ready', 'running', 'resolved', 'up', 'normal'].includes(s)) return 'ops-badge--up';
+  if (['degraded', 'warning', 'mitigated', 'flapping'].includes(s)) return 'ops-badge--degraded';
+  if (['denied', 'closed', 'completed'].includes(s)) return 'ops-badge--denied';
+  if (['crashloopbackoff'].includes(s)) return 'ops-badge--crash';
+  return 'ops-badge--denied';
+}
+---
+
+<OpsLayout title="Status · Readiness Probe" endpoint="/status">
+  <OpsHeader slot="header" endpoint="/status" jsonPath="/status.json" probeType="readiness" />
+
+  <div class="ops-hero">
+    <h1>
+      <span class="ops-status-ready">● READY</span> — readiness probe
+    </h1>
+    <p>{payload.message}</p>
+  </div>
+
+  <div class="ops-grid">
+    <section class="ops-panel">
+      <div class="ops-panel__bar">
+        <span class="ops-dot ops-dot--red" />
+        <span class="ops-dot ops-dot--amber" />
+        <span class="ops-dot ops-dot--green" />
+        <span>dependencies</span>
+      </div>
+      <div class="ops-panel__body">
+        <table class="ops-table">
+          <thead>
+            <tr>
+              <th>NAME</th>
+              <th>STATUS</th>
+              <th>NOTE</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              payload.dependencies.map((dep) => (
+                <tr>
+                  <td>{dep.name}</td>
+                  <td>
+                    <span class={`ops-badge ${badgeClass(dep.status)}`}>{dep.status}</span>
+                  </td>
+                  <td>{dep.note ?? dep.reason ?? '—'}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="ops-panel">
+      <div class="ops-panel__bar">
+        <span class="ops-dot ops-dot--red" />
+        <span class="ops-dot ops-dot--amber" />
+        <span class="ops-dot ops-dot--green" />
+        <span>kubectl get pods</span>
+      </div>
+      <div class="ops-panel__body">
+        <table class="ops-table">
+          <thead>
+            <tr>
+              <th>NAME</th>
+              <th>READY</th>
+              <th>STATUS</th>
+              <th>RESTARTS</th>
+              <th>AGE</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              payload.pods.map((pod) => (
+                <tr>
+                  <td>{pod.name}</td>
+                  <td>{pod.ready}</td>
+                  <td>
+                    <span class={`ops-badge ${badgeClass(pod.status)}`}>{pod.status}</span>
+                  </td>
+                  <td>{pod.restarts}</td>
+                  <td>{pod.age}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+        {
+          payload.pods
+            .filter((p) => 'note' in p)
+            .map((p) => (
+              <p class="ops-note">
+                {p.name}: {'note' in p ? p.note : ''}
+              </p>
+            ))
+        }
+      </div>
+    </section>
+
+    <section class="ops-panel">
+      <div class="ops-panel__bar">
+        <span class="ops-dot ops-dot--red" />
+        <span class="ops-dot ops-dot--amber" />
+        <span class="ops-dot ops-dot--green" />
+        <span>SLO dashboard</span>
+      </div>
+      <div class="ops-panel__body">
+        <table class="ops-table">
+          <thead>
+            <tr>
+              <th>SLO</th>
+              <th>TARGET</th>
+              <th>ACTUAL</th>
+              <th>ERROR BUDGET</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              payload.slos.map((slo) => (
+                <tr>
+                  <td>{slo.name}</td>
+                  <td>{slo.target}</td>
+                  <td>{slo.actual}</td>
+                  <td>{slo.error_budget}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="ops-panel">
+      <div class="ops-panel__bar">
+        <span class="ops-dot ops-dot--red" />
+        <span class="ops-dot ops-dot--amber" />
+        <span class="ops-dot ops-dot--green" />
+        <span>incident history (abbreviated)</span>
+      </div>
+      <div class="ops-panel__body">
+        <table class="ops-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>TITLE</th>
+              <th>STATUS</th>
+              <th>RESOLUTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              payload.incidents.map((inc) => (
+                <tr>
+                  <td>{inc.id}</td>
+                  <td>{inc.title}</td>
+                  <td>
+                    <span class={`ops-badge ${badgeClass(inc.status)}`}>{inc.status}</span>
+                  </td>
+                  <td>{inc.resolution}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="ops-panel">
+      <div class="ops-panel__bar">
+        <span class="ops-dot ops-dot--red" />
+        <span class="ops-dot ops-dot--amber" />
+        <span class="ops-dot ops-dot--green" />
+        <span>cluster events</span>
+      </div>
+      <div class="ops-panel__body">
+        <table class="ops-table">
+          <thead>
+            <tr>
+              <th>TYPE</th>
+              <th>REASON</th>
+              <th>OBJECT</th>
+              <th>MESSAGE</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              payload.events.map((ev) => (
+                <tr>
+                  <td>
+                    <span class={`ops-badge ${badgeClass(ev.type)}`}>{ev.type}</span>
+                  </td>
+                  <td>{ev.reason}</td>
+                  <td>{ev.object}</td>
+                  <td>{ev.message}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="ops-panel">
+      <div class="ops-panel__body">
+        <OpsLiveMetrics client:load />
+      </div>
+    </section>
+
+    <section class="ops-panel">
+      <div class="ops-panel__bar">
+        <span class="ops-dot ops-dot--red" />
+        <span class="ops-dot ops-dot--amber" />
+        <span class="ops-dot ops-dot--green" />
+        <span>application/json</span>
+      </div>
+      <pre class="ops-json"><code>{json}</code></pre>
+    </section>
+  </div>
+
+  <p class="ops-compliance">
+    <strong>Capacity:</strong> {payload.capacity.years_experience} experience ·{' '}
+    {payload.capacity.nodes_managed} nodes · {payload.capacity.clusters_operated} clusters ·{' '}
+    {payload.capacity.cloud_savings_usd} optimized. Liveness at <a href="/health">/health</a>.
+  </p>
+</OpsLayout>

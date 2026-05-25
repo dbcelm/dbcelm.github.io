@@ -1,0 +1,342 @@
+---
+import cv from '../content/cv.json';
+import { getSiteVersion } from '../data/ops-endpoints';
+
+interface Props {
+  title: string;
+  endpoint: string;
+  description?: string;
+}
+
+const { title, endpoint, description = 'Platform observability endpoints for a static CV.' } = Astro.props;
+const siteVersion = getSiteVersion();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="ops-body">
+    <slot name="header" />
+    <main class="ops-main container">
+      <slot />
+    </main>
+    <footer class="ops-footer">
+      <p>
+        <span class="ops-dim">endpoint</span> {endpoint}
+        <span class="ops-sep">·</span>
+        <span class="ops-dim">release</span> v{siteVersion}
+      </p>
+      <p class="ops-footer-links">
+        <a href="/health">/health</a>
+        <a href="/status">/status</a>
+        <a href="/">← home</a>
+      </p>
+    </footer>
+    <p class="site-version" aria-hidden="true">v{siteVersion}</p>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+
+  .ops-body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background:
+      radial-gradient(ellipse at 80% 0%, rgba(34, 197, 94, 0.08), transparent 50%),
+      var(--color-bg);
+  }
+
+  .ops-main {
+    flex: 1;
+    padding-block: var(--space-lg) var(--space-xl);
+  }
+
+  .ops-footer {
+    padding: var(--space-md) var(--space-sm) var(--space-lg);
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--color-mono);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .ops-footer p {
+    margin: 0.35rem 0;
+  }
+
+  .ops-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
+  }
+
+  .ops-footer-links a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .ops-footer-links a:hover {
+    color: var(--color-text);
+  }
+
+  .ops-dim {
+    color: var(--color-text-muted);
+  }
+
+  .ops-sep {
+    margin-inline: 0.5rem;
+    opacity: 0.4;
+  }
+
+  .site-version {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 60;
+    margin: 0;
+    padding: 0.35rem 0.6rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    background: rgba(10, 10, 11, 0.82);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--color-mono);
+    pointer-events: none;
+  }
+</style>
+
+<style is:global>
+  .ops-panel {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: rgba(17, 17, 19, 0.9);
+    overflow: hidden;
+  }
+
+  .ops-panel__bar {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.55rem 0.85rem;
+    border-bottom: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.03);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--color-mono);
+  }
+
+  .ops-dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+  }
+
+  .ops-dot--red {
+    background: #ef4444;
+  }
+  .ops-dot--amber {
+    background: #f59e0b;
+  }
+  .ops-dot--green {
+    background: #22c55e;
+  }
+
+  .ops-panel__body {
+    padding: var(--space-md);
+  }
+
+  .ops-hero {
+    margin-bottom: var(--space-md);
+  }
+
+  .ops-hero h1 {
+    font-family: var(--font-mono);
+    font-size: clamp(1.1rem, 3vw, 1.35rem);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .ops-hero h1 .ops-status-up {
+    color: #4ade80;
+  }
+
+  .ops-hero h1 .ops-status-ready {
+    color: #60a5fa;
+  }
+
+  .ops-hero p {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    max-width: 62ch;
+  }
+
+  .ops-curl {
+    margin-bottom: var(--space-md);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px dashed var(--color-border-accent);
+    background: rgba(59, 130, 246, 0.06);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    overflow-x: auto;
+  }
+
+  .ops-curl code {
+    color: #e2e8f0;
+  }
+
+  .ops-curl .ops-label {
+    display: block;
+    color: var(--color-mono);
+    margin-bottom: 0.35rem;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .ops-grid {
+    display: grid;
+    gap: var(--space-md);
+  }
+
+  @media (min-width: 900px) {
+    .ops-grid--split {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .ops-section-title {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-mono);
+    margin-bottom: 0.65rem;
+  }
+
+  .ops-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+  }
+
+  .ops-table th,
+  .ops-table td {
+    text-align: left;
+    padding: 0.45rem 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .ops-table th {
+    color: var(--color-mono);
+    font-weight: 500;
+  }
+
+  .ops-badge {
+    display: inline-block;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+
+  .ops-badge--up,
+  .ops-badge--healthy,
+  .ops-badge--ready,
+  .ops-badge--resolved,
+  .ops-badge--running,
+  .ops-badge--normal {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+  }
+
+  .ops-badge--degraded,
+  .ops-badge--warning,
+  .ops-badge--mitigated,
+  .ops-badge--flapping {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+  }
+
+  .ops-badge--denied,
+  .ops-badge--closed {
+    background: rgba(148, 163, 184, 0.12);
+    color: #94a3b8;
+  }
+
+  .ops-badge--crash {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+  }
+
+  .ops-json {
+    margin: 0;
+    padding: var(--space-md);
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    line-height: 1.55;
+    color: #cbd5e1;
+    white-space: pre;
+  }
+
+  .ops-json .key {
+    color: #7dd3fc;
+  }
+  .ops-json .str {
+    color: #86efac;
+  }
+  .ops-json .num {
+    color: #fcd34d;
+  }
+  .ops-json .bool {
+    color: #c4b5fd;
+  }
+
+  .ops-note {
+    margin-top: var(--space-sm);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .ops-compliance {
+    margin-top: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    border-left: 3px solid var(--color-accent);
+    background: rgba(59, 130, 246, 0.06);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+
+  .ops-compliance strong {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .ops-compliance a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

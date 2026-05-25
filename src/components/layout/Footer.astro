@@ -13,6 +13,11 @@ const terminalCommand = 'kubectl get events';
       <span class="footer__cursor" id="footer-terminal-cursor" aria-hidden="true"></span>
     </p>
     <p class="footer__tagline">{cv.footer.tagline}</p>
+    <p class="footer__probes" aria-label="Observability endpoints">
+      <span class="footer__probes-label">probes</span>
+      <a href="/health">/health</a>
+      <a href="/status">/status</a>
+    </p>
   </div>
 </footer>
 
@@ -85,6 +90,34 @@ const terminalCommand = 'kubectl get events';
   .footer__tagline {
     font-size: 0.85rem;
     color: var(--color-text-muted);
+  }
+
+  .footer__probes {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--color-text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem 0.85rem;
+  }
+
+  .footer__probes-label {
+    color: var(--color-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.62rem;
+  }
+
+  .footer__probes a {
+    color: var(--color-mono);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .footer__probes a:hover {
+    color: var(--color-accent);
   }
 
   @media (prefers-reduced-motion: reduce) {

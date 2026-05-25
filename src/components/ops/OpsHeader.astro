@@ -1,0 +1,36 @@
+---
+interface Props {
+  endpoint: string;
+  jsonPath: string;
+  probeType: 'liveness' | 'readiness';
+}
+
+const { endpoint, jsonPath, probeType } = Astro.props;
+const siteUrl = 'https://dbcelm.github.io';
+const curlTarget = `${siteUrl}${jsonPath}`;
+---
+
+<header class="ops-top">
+  <p class="ops-top__crumb">
+    <span class="ops-dim">probe</span> {probeType}
+    <span class="ops-sep">·</span>
+    <span class="ops-dim">path</span> {endpoint}
+  </p>
+  <div class="ops-curl">
+    <span class="ops-label">For machines (and curious SREs)</span>
+    <code>curl -s {curlTarget} | jq</code>
+  </div>
+</header>
+
+<style>
+  .ops-top {
+    margin-bottom: var(--space-md);
+  }
+
+  .ops-top__crumb {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--color-mono);
+    margin-bottom: var(--space-sm);
+  }
+</style>
