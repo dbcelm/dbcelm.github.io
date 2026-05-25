@@ -1,0 +1,79 @@
+---
+import OpsLayout from '../layouts/OpsLayout.astro';
+import OpsHeader from '../components/ops/OpsHeader.astro';
+import { getHealthPayload, getHealthJson } from '../data/ops-endpoints';
+
+const payload = getHealthPayload();
+const json = getHealthJson();
+
+function badgeClass(status: string) {
+  const s = status.toLowerCase();
+  if (['up', 'healthy', 'ready', 'running', 'normal', 'resolved'].includes(s)) return 'ops-badge--up';
+  if (['degraded', 'flapping', 'warning', 'mitigated'].includes(s)) return 'ops-badge--degraded';
+  if (['denied', 'closed'].includes(s)) return 'ops-badge--denied';
+  return 'ops-badge--denied';
+}
+---
+
+<OpsLayout title="Health · Liveness Probe" endpoint="/health">
+  <OpsHeader slot="header" endpoint="/health" jsonPath="/health.json" probeType="liveness" />
+
+  <div class="ops-hero">
+    <h1>
+      <span class="ops-status-up">● UP</span> — liveness probe
+    </h1>
+    <p>{payload.message}</p>
+  </div>
+
+  <div class="ops-grid ops-grid--split">
+    <section class="ops-panel">
+      <div class="ops-panel__bar">
+        <span class="ops-dot ops-dot--red" />
+        <span class="ops-dot ops-dot--amber" />
+        <span class="ops-dot ops-dot--green" />
+        <span>kubectl get checks -o wide</span>
+      </div>
+      <div class="ops-panel__body">
+        <p class="ops-section-title">Component checks</p>
+        <table class="ops-table">
+          <thead>
+            <tr>
+              <th>CHECK</th>
+              <th>STATUS</th>
+              <th>DETAIL</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              Object.entries(payload.checks).map(([name, check]) => (
+                <tr>
+                  <td>{name.replace(/_/g, '-')}</td>
+                  <td>
+                    <span class={`ops-badge ${badgeClass(check.status)}`}>{check.status}</span>
+                  </td>
+                  <td>{check.detail ?? '—'}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="ops-panel">
+      <div class="ops-panel__bar">
+        <span class="ops-dot ops-dot--red" />
+        <span class="ops-dot ops-dot--amber" />
+        <span class="ops-dot ops-dot--green" />
+        <span>application/json</span>
+      </div>
+      <pre class="ops-json"><code>{json}</code></pre>
+    </section>
+  </div>
+
+  <p class="ops-compliance">
+    <strong>SRE mandate:</strong> {payload.sre_mandate}. This site ships with /health and /status because
+    platform engineers probe everything, including their own portfolios. Readiness details live at{' '}
+    <a href="/status">/status</a>.
+  </p>
+</OpsLayout>
