@@ -32,7 +32,7 @@ jobs:
 
       - name: Review dependency changes on PRs
         if: github.event_name == 'pull_request'
-        uses: actions/dependency-review-action@v4
+        uses: actions/dependency-review-action@v5
 
       - name: Setup Node
         uses: actions/setup-node@v6
